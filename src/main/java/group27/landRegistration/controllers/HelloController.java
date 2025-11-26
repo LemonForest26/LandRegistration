@@ -15,5 +15,6 @@ public class HelloController {
 
     @FXML
     public void ClickMeOnAction(ActionEvent actionEvent) {
+        welcomeText.setText("Thanks for clicking me!");
     }
 }
