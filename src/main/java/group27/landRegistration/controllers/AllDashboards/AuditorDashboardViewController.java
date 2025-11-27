@@ -1,4 +1,4 @@
-package group27.landRegistration.controllers.Dashboards;
+package group27.landRegistration.controllers.AllDashboards;
 
 import javafx.event.ActionEvent;
 
