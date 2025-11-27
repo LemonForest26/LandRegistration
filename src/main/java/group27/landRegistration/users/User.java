@@ -3,9 +3,9 @@ package group27.landRegistration.users;
 import java.time.LocalDate;
 
 abstract public class User {
-    String name, password, Email;
-    long NID, phoneNumber;
-    LocalDate DoB;
+    protected String name, password, Email;
+    protected long NID, phoneNumber;
+    protected LocalDate DoB;
 
     public User(String name, String password, String email, long NID, long phoneNumber, LocalDate doB) {
         this.name = name;
