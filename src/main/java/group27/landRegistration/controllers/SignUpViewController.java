@@ -8,21 +8,25 @@ import javafx.scene.control.TextField;
 public class SignUpViewController {
 
     @javafx.fxml.FXML
-    private TextField PasswordTextField;
+    private DatePicker DoBDP;
     @javafx.fxml.FXML
-    private TextField NIDTextField;
+    private TextField NIDTF;
     @javafx.fxml.FXML
-    private TextField UserNameTextField;
+    private TextField PhoneNumberTF;
     @javafx.fxml.FXML
-    private TextField PhoneNumberTextField;
+    private TextField EmailTF;
     @javafx.fxml.FXML
-    private DatePicker DOBDatePicker;
+    private TextField UserNameTF;
     @javafx.fxml.FXML
-    private ComboBox UserComboBox;
+    private ComboBox UserCB;
     @javafx.fxml.FXML
-    private TextField EmailTextField;
+    private TextField PasswordTF;
+
+    @Deprecated
+    public void SignUpOnAction(ActionEvent actionEvent) {
+    }
 
     @javafx.fxml.FXML
-    public void SignUpOnAction(ActionEvent actionEvent) {
+    public void SignUpOA(ActionEvent actionEvent) {
     }
 }
