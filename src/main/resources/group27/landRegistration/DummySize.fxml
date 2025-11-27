@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.DummySizeController">
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LogInViewController">
    <children>
       <Button layoutX="278.0" layoutY="220.0" mnemonicParsing="false" text="Button" />
       <Label layoutX="330.0" layoutY="117.0" prefHeight="18.0" prefWidth="130.0" style="-fx-background-color: white;" text="Label" />
