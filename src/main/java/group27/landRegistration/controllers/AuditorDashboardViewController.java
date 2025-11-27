@@ -2,7 +2,7 @@ package group27.landRegistration.controllers;
 
 import javafx.event.ActionEvent;
 
-public class AuditorViewController {
+public class AuditorDashboardViewController {
     @javafx.fxml.FXML
     public void ValuationCheckOA(ActionEvent actionEvent) {
     }
