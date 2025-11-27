@@ -3,9 +3,14 @@ package group27.landRegistration.controllers;
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 
-public class BankRepresentativeDashbordViewController {
+public class BankRepresentativeDashboardViewController
+{
     @javafx.fxml.FXML
     private DatePicker DateofPaymentSlipDatePicker;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
 
     @javafx.fxml.FXML
     public void TransactionLogsOnAction(ActionEvent actionEvent) {

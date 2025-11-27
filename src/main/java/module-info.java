@@ -1,6 +1,7 @@
 module group27.landRegistration {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens group27.landRegistration to javafx.fxml;
