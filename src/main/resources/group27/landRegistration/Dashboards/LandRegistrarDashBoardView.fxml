@@ -60,7 +60,4 @@
          </children>
       </AnchorPane>
    </center>
-   <right>
-      <VBox prefHeight="453.0" prefWidth="125.0" BorderPane.alignment="CENTER" />
-   </right>
 </BorderPane>
