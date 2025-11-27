@@ -2,7 +2,7 @@ package group27.landRegistration.controllers.Dashboards;
 
 import javafx.event.ActionEvent;
 
-public class PublicUserViewController {
+public class PublicUserDashBoardViewController {
 
     @javafx.fxml.FXML
     public void NoticesOA(ActionEvent actionEvent) {
