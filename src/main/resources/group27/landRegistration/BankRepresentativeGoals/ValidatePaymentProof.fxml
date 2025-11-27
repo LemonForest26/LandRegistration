@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ValiddatePaymentProofviewcontroller"
+            fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ValidatePaymentProofviewcontroller"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>

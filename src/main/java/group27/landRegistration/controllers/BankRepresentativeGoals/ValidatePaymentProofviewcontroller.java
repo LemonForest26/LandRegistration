@@ -1,4 +1,4 @@
 package group27.landRegistration.controllers.BankRepresentativeGoals;
 
-public class ValiddatePaymentProofviewcontroller {
+public class ValidatePaymentProofviewcontroller {
 }
