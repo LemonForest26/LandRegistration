@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane blendMode="DARKEN" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserViewController">
+   <children>
+      <BorderPane depthTest="DISABLE" prefHeight="700.0" prefWidth="262.0" style="-fx-background-color: #dee0e0;" />
+      <Button layoutX="35.0" layoutY="155.0" mnemonicParsing="false" onAction="#SearchPlotIDOA" prefHeight="25.0" prefWidth="200.0" text="Search Plot ID">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Label alignment="CENTER" layoutX="69.0" layoutY="100.0" prefHeight="18.0" prefWidth="130.0" style="-fx-background-color: white;" text="Public User Services">
+         <effect>
+            <Reflection />
+         </effect>
+      </Label>
+      <Button layoutX="35.0" layoutY="363.0" mnemonicParsing="false" onAction="#TrackRequestOA" prefHeight="25.0" prefWidth="200.0" text="Track Request">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="35.0" layoutY="206.0" mnemonicParsing="false" onAction="#SearchByAreaOA" prefHeight="25.0" prefWidth="200.0" text="Search by Area">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="35.0" layoutY="259.0" mnemonicParsing="false" onAction="#PublicMapsOA" prefHeight="25.0" prefWidth="200.0" text="Public Maps">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="35.0" layoutY="312.0" mnemonicParsing="false" onAction="#SubmitRequestOA" prefHeight="25.0" prefWidth="200.0" text="Submit Request">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="35.0" layoutY="414.0" mnemonicParsing="false" onAction="#VerifyCertificateOA" prefHeight="25.0" prefWidth="200.0" text="Verify Certificate">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="34.0" layoutY="464.0" mnemonicParsing="false" onAction="#NoticesOA" prefHeight="25.0" prefWidth="200.0" text="Notices">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <Button layoutX="34.0" layoutY="512.0" mnemonicParsing="false" onAction="#FormsAndDownloadsOA" prefHeight="25.0" prefWidth="200.0" text="Forms &amp; Downloads">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+      <AnchorPane layoutX="304.0" layoutY="237.0" prefHeight="200.0" prefWidth="349.0">
+         <children>
+            <Text layoutX="23.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Public User Portal">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button layoutX="720.0" layoutY="652.0" mnemonicParsing="false" onAction="#LogOutOA" prefHeight="25.0" prefWidth="200.0" text="Log Out">
+         <effect>
+            <InnerShadow>
+               <color>
+                  <Color opacity="0.4236641228199005" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
