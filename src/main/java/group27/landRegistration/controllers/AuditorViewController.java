@@ -1,4 +1,4 @@
 package group27.landRegistration.controllers;
 
-public class DummySizeController {
+public class AuditorViewController {
 }
