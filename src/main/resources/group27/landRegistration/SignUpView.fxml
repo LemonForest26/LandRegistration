@@ -8,21 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SignUpViewController">
+
+<AnchorPane prefHeight="442.0" prefWidth="424.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SignUpViewController">
    <children>
-      <AnchorPane layoutX="182.0" layoutY="82.0" prefHeight="442.0" prefWidth="424.0" style="-fx-background-color: white;">
-         <children>
-            <Button layoutX="89.0" layoutY="391.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="25.0" prefWidth="242.0" text="Sign Up" />
-            <Label alignment="TOP_CENTER" layoutX="129.0" layoutY="57.0" prefHeight="6.0" prefWidth="166.0" style="-fx-background-color: white;" text="Sign Up" />
-            <DatePicker fx:id="DOBDatePicker" layoutX="89.0" layoutY="331.0" prefHeight="25.0" prefWidth="242.0" promptText="Date of Birth" />
-            <ComboBox fx:id="UserComboBox" layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="242.0" promptText="Select User" />
-            <TextField fx:id="UserNameTextField" layoutX="89.0" layoutY="91.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Username" />
-            <TextField fx:id="PasswordTextField" layoutX="89.0" layoutY="251.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Password" />
-            <Text layoutX="65.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Registration of Bangladesh" textAlignment="CENTER" wrappingWidth="290.0" />
-            <TextField fx:id="NIDTextField" layoutX="89.0" layoutY="168.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter NID" />
-            <TextField fx:id="EmailTextField" layoutX="89.0" layoutY="130.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter email" />
-            <TextField fx:id="PhoneNumberTextField" layoutX="88.0" layoutY="210.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Phone Number" />
-         </children>
-      </AnchorPane>
+      <Button layoutX="89.0" layoutY="391.0" mnemonicParsing="false" onAction="#SignUpOA" prefHeight="25.0" prefWidth="242.0" text="Sign Up" />
+      <Label alignment="TOP_CENTER" layoutX="129.0" layoutY="57.0" prefHeight="6.0" prefWidth="166.0" style="-fx-background-color: white;" text="Sign Up" />
+      <DatePicker fx:id="DoBDP" layoutX="89.0" layoutY="331.0" prefHeight="25.0" prefWidth="242.0" promptText="Date of Birth" />
+      <ComboBox fx:id="UserCB" layoutX="89.0" layoutY="290.0" prefHeight="25.0" prefWidth="242.0" promptText="Select User" />
+      <TextField fx:id="UserNameTF" layoutX="89.0" layoutY="91.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Username" />
+      <TextField fx:id="PasswordTF" layoutX="89.0" layoutY="251.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Password" />
+      <Text layoutX="65.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land Registration of Bangladesh" textAlignment="CENTER" wrappingWidth="290.0" />
+      <TextField fx:id="NIDTF" layoutX="89.0" layoutY="168.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter NID" />
+      <TextField fx:id="EmailTF" layoutX="89.0" layoutY="130.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter email" />
+      <TextField fx:id="PhoneNumberTF" layoutX="88.0" layoutY="210.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Phone Number" />
    </children>
 </AnchorPane>
