@@ -1,5 +1,10 @@
 package group27.landRegistration.users;
 
-public class BankRepresentative {
+import java.time.LocalDate;
 
+public class BankRepresentative extends User {
+
+    public BankRepresentative(String name, String password, String email, long NID, long phoneNumber, LocalDate doB) {
+        super(name, password, email, NID, phoneNumber, doB);
+    }
 }
