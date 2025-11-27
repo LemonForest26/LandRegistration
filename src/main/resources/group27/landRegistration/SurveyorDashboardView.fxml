@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardViewController">
+   <children>
+      <Button layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#VerifyBoundaryOnAction" text="Verify Boundary" />
+      <Label layoutX="280.0" layoutY="56.0" text="Surveyor Dashboard">
+         <font>
+            <Font name="System Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="143.0" text="Surveyor Tools">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="64.0" layoutY="202.0" mnemonicParsing="false" onAction="#StartNewSurveyOnAction" text=" Start New Survey" />
+      <Button layoutX="64.0" layoutY="287.0" mnemonicParsing="false" onAction="#GenerateMapOnAction" text="Generate Map" />
+      <Button layoutX="64.0" layoutY="324.0" mnemonicParsing="false" onAction="#UpdateSurveyrecordOnAction" text="Update Survey record" />
+      <Button layoutX="64.0" layoutY="361.0" mnemonicParsing="false" onAction="#InspectionRequestsOnAction" text="Inspection Requests" />
+      <Button layoutX="780.0" layoutY="638.0" mnemonicParsing="false" onAction="#BackToHomepageOnAction" text="Back To Home page" />
+      <Button layoutX="64.0" layoutY="469.0" mnemonicParsing="false" onAction="#ViewSurveyLogsOnAction" text="View Survey Logs" />
+      <Button layoutX="64.0" layoutY="433.0" mnemonicParsing="false" onAction="#DisputeEvidenceOnAction" text="Dispute Evidence" />
+      <Button layoutX="64.0" layoutY="398.0" mnemonicParsing="false" onAction="#QuickMeasurementOnAction" text="Quick Measurement" />
+      <BorderPane layoutX="224.0" layoutY="150.0" prefHeight="446.0" prefWidth="711.0" style="-fx-border-color: blue;">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="121.0" layoutY="168.0" text="Welcome To Surveyor Dashboard">
+                     <font>
+                        <Font name="System Bold Italic" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="121.0" layoutY="222.0" text="Select An Option From The Menu....">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
