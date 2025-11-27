@@ -18,21 +18,21 @@
                </font>
             </Label>
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Activity Log" />
+            <Button mnemonicParsing="false" onAction="#ActivityLogOA" prefHeight="26.0" prefWidth="190.0" text="Activity Log" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Generate Audit Report" />
+            <Button mnemonicParsing="false" onAction="#GenerateAuditReportOA" prefHeight="26.0" prefWidth="190.0" text="Generate Audit Report" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Valuation Check" />
+            <Button mnemonicParsing="false" onAction="#ValuationCheckOA" prefHeight="26.0" prefWidth="190.0" text="Valuation Check" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Monthry Report Lock" />
+            <Button mnemonicParsing="false" onAction="#MonthlyReportLockOA" prefHeight="26.0" prefWidth="190.0" text="Monthly Report Lock" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Approval Sampling" />
+            <Button mnemonicParsing="false" onAction="#ApprovalSamplingOA" prefHeight="26.0" prefWidth="190.0" text="Approval Sampling" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="User Permissions" />
+            <Button mnemonicParsing="false" onAction="#UserPermissionOA" prefHeight="26.0" prefWidth="190.0" text="User Permissions" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Backup Manager" />
+            <Button mnemonicParsing="false" onAction="#BackupManagerOA" prefHeight="26.0" prefWidth="190.0" text="Backup Manager" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Integrity Summary" />
+            <Button mnemonicParsing="false" onAction="#IntegritySummaryOA" prefHeight="26.0" prefWidth="190.0" text="Integrity Summary" />
          </children>
       </VBox>
    </left>
@@ -40,7 +40,7 @@
       <HBox alignment="CENTER" prefHeight="46.0" prefWidth="974.0" style="-fx-background-color: #c7c5c5;" BorderPane.alignment="CENTER">
          <children>
             <Label prefHeight="18.0" prefWidth="816.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Log Out" />
+            <Button mnemonicParsing="false" onAction="#LogOutOA" prefHeight="26.0" prefWidth="102.0" text="Log Out" />
          </children>
       </HBox>
    </top>

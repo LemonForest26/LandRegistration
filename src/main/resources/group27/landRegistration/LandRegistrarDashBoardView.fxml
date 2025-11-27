@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandRegistrarDashBoardViewController">
    <left>
       <VBox prefHeight="590.0" prefWidth="226.0" style="-fx-background-color: #edebeb;" BorderPane.alignment="CENTER">
@@ -19,21 +18,21 @@
                </font>
             </Label>
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Rewiew Pending Applications" />
+            <Button mnemonicParsing="false" onAction="#ReviewPendingApplicationsOA" prefHeight="26.0" prefWidth="190.0" text="Rewiew Pending Applications" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Approve/Reject" />
+            <Button mnemonicParsing="false" onAction="#ApproveRejectOA" prefHeight="26.0" prefWidth="190.0" text="Approve/Reject" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Generate Certificate" />
+            <Button mnemonicParsing="false" onAction="#GenerateCertificateOA" prefHeight="26.0" prefWidth="190.0" text="Generate Certificate" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Transfer Ownership" />
+            <Button mnemonicParsing="false" onAction="#TransferOwnershipOA" prefHeight="26.0" prefWidth="190.0" text="Transfer Ownership" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Disputes" />
+            <Button mnemonicParsing="false" onAction="#DisputesOA" prefHeight="26.0" prefWidth="190.0" text="Disputes" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Zoning Update" />
+            <Button mnemonicParsing="false" onAction="#ZoningUpdateOA" prefHeight="26.0" prefWidth="190.0" text="Zoning Update" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Officer Performance" />
+            <Button mnemonicParsing="false" onAction="#OfficerPerformanceOA" prefHeight="26.0" prefWidth="190.0" text="Officer Performance" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" text="Home" />
+            <Button mnemonicParsing="false" onAction="#DailySummaryReportOA" prefHeight="26.0" prefWidth="190.0" text="Daily Summary Report" />
          </children>
       </VBox>
    </left>
@@ -41,7 +40,7 @@
       <HBox alignment="CENTER" prefHeight="46.0" prefWidth="974.0" style="-fx-background-color: #c7c5c5;" BorderPane.alignment="CENTER">
          <children>
             <Label prefHeight="18.0" prefWidth="816.0" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Log Out" />
+            <Button mnemonicParsing="false" onAction="#LogOutOA" prefHeight="26.0" prefWidth="102.0" text="Log Out" />
          </children>
       </HBox>
    </top>
