@@ -1,4 +1,4 @@
-package group27.landRegistration.controllers.LandOwnerGoals;
+package group27.landRegistration.controllers.PublicUserGoals;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 
 public class EditProfileViewController {
     @javafx.fxml.FXML
-    private TextField AddressTF;
-    @javafx.fxml.FXML
-    private TextField PhoneTF;
-    @javafx.fxml.FXML
     private DatePicker DoBDP;
     @javafx.fxml.FXML
+    private TextField AddressTF;
+    @javafx.fxml.FXML
     private TextField EmailTF;
+    @javafx.fxml.FXML
+    private TextField PhoneTF;
     @javafx.fxml.FXML
     private TextField NameTF;
     @javafx.fxml.FXML
@@ -22,10 +22,10 @@ public class EditProfileViewController {
     private PasswordField ConfirmPasswordTF;
 
     @javafx.fxml.FXML
-    public void SaveProfileOA(ActionEvent actionEvent) {
+    public void HomeOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void HomeOA(ActionEvent actionEvent) {
+    public void SaveProfileOA(ActionEvent actionEvent) {
     }
 }
