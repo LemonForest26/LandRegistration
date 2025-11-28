@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class FinaliseTransferApplicationViewController {
+public class FinaliseTransferViewController {
     @javafx.fxml.FXML
     private TextField NewOwnerTF;
     @javafx.fxml.FXML

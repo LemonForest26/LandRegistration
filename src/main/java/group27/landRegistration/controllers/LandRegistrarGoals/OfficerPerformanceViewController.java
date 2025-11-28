@@ -1,6 +1,6 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
-public class OfficerPerformanceApplicationViewController {
+public class OfficerPerformanceViewController {
     @javafx.fxml.FXML
     private ComboBox OfficerTypeCB;
     @javafx.fxml.FXML

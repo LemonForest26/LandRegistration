@@ -1,6 +1,6 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
-public class QuickDisputeFlagApplicationViewController {
+public class QuickDisputeFlagViewController {
     @javafx.fxml.FXML
     private ComboBox SurveyorListCB;
     @javafx.fxml.FXML

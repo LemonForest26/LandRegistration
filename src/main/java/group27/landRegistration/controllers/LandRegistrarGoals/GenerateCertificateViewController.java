@@ -1,14 +1,14 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
-public class UpdateZoningApplicationViewController {
+public class GenerateCertificateViewController {
     @javafx.fxml.FXML
     private TextField PlotIDTF;
     @javafx.fxml.FXML
-    private TextArea FileUploadTA;
+    private DatePicker CertificateDateDP;
     @javafx.fxml.FXML
-    private ComboBox NewZoningCB;
+    private TextField OwnerNameTF;
 
     @javafx.fxml.FXML
-    public void SaveZoning(ActionEvent actionEvent) {
+    public void GeneratepdfOA(ActionEvent actionEvent) {
     }
 }
