@@ -14,11 +14,15 @@ public class ActivityLogViewController {
     @javafx.fxml.FXML
     private TableColumn UserTC;
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void HomeOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void FlagEntryOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }
