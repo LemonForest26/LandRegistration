@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -8,10 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.EditProfileViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.EditProfileViewController">
    <top>
-      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox alignment="BOTTOM_CENTER" prefHeight="84.0" prefWidth="658.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Settings">
                <font>
@@ -22,11 +23,17 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="PhoneTF" layoutX="268.0" layoutY="89.0" promptText="Phone" />
-            <TextField fx:id="AddressTF" layoutX="268.0" layoutY="139.0" promptText="Address" />
-            <Button layoutX="302.0" layoutY="203.0" mnemonicParsing="false" onAction="#SaveProfileOA" text="Save Profile" />
+            <TextField fx:id="PhoneTF" layoutX="29.0" layoutY="154.0" prefHeight="26.0" prefWidth="186.0" promptText="Phone" />
+            <TextField fx:id="AddressTF" layoutX="29.0" layoutY="200.0" prefHeight="26.0" prefWidth="186.0" promptText="Address" />
+            <Button layoutX="413.0" layoutY="425.0" mnemonicParsing="false" onAction="#SaveProfileOA" prefHeight="26.0" prefWidth="256.0" text="Save Profile" />
+            <TextField fx:id="NameTF" layoutX="30.0" layoutY="49.0" prefHeight="26.0" prefWidth="255.0" promptText="Name" />
+            <DatePicker fx:id="DoBDP" layoutX="30.0" layoutY="102.0" prefHeight="26.0" prefWidth="270.0" promptText="Date of Birth" />
+            <PasswordField fx:id="ComfirmPasswordTF" layoutX="414.0" layoutY="399.0" prefHeight="26.0" prefWidth="255.0" promptText="Confirm current passowrd to edit profile" />
+            <PasswordField fx:id="NowPasswordTF" layoutX="32.0" layoutY="290.0" prefHeight="26.0" prefWidth="250.0" promptText="New Passowrd" />
+            <TextField fx:id="EmailTF" layoutX="29.0" layoutY="249.0" prefHeight="26.0" prefWidth="186.0" promptText="Emali" />
+            <Button layoutX="29.0" layoutY="425.0" mnemonicParsing="false" onAction="#HomeOA" text="Home" />
          </children>
       </AnchorPane>
    </center>
