@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="560.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.FormsAndDownloadsViewController">
+   <top>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Forms &amp; Downloads">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="FormListView" layoutX="193.0" layoutY="56.0" prefHeight="200.0" prefWidth="313.0" />
+            <Button layoutX="299.0" layoutY="291.0" mnemonicParsing="false" onAction="#DownloadFormOA" text="Download Form" />
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#HomeOA" text="Home" />
+         </children>
+      </HBox>
+   </bottom>
+
+</BorderPane>
