@@ -10,7 +10,7 @@ public class GenerateAuditReportViewController {
     private DatePicker EndDateDP;
 
     @javafx.fxml.FXML
-    public void GenerateREportOA(ActionEvent actionEvent) {
+    public void GenerateReportOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
