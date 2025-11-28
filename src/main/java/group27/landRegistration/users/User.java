@@ -68,11 +68,13 @@ abstract public class User {
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", password='" + password + '\'' +
                 ", Email='" + Email + '\'' +
                 ", NID=" + NID +
                 ", phoneNumber=" + phoneNumber +
                 ", DoB=" + DoB +
                 '}';
+    }
+
+    public void editProfile() {
     }
 }

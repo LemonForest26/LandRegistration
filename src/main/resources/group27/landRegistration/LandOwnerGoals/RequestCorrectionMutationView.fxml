@@ -10,8 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.RequestCorrectionMutationViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.RequestCorrectionMutationViewController">
    <top>
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,7 +40,7 @@
          <children>
             <AnchorPane layoutX="100.0" layoutY="25.0" prefHeight="266.0" prefWidth="276.0">
                <children>
-                  <TextField fx:id="PlotIDTF" layoutX="64.0" layoutY="14.0" promptText="Plot ID" />
+                  <TextField fx:id="PlotIDTF" layoutX="40.0" layoutY="14.0" prefHeight="26.0" prefWidth="201.0" promptText="Plot ID" />
                   <TextArea fx:id="CorrectionTA" layoutX="40.0" layoutY="52.0" prefHeight="200.0" prefWidth="200.0" promptText="Correction" />
                </children>
             </AnchorPane>
