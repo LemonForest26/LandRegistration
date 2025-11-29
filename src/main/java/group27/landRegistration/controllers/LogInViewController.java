@@ -15,6 +15,10 @@ public class LogInViewController {
     @javafx.fxml.FXML
     private TextField PasswordTF;
 
+    public void initialize() {
+        UserTypeCB.getItems().addAll("Auditor", "Bank Representative", "Land Owner", "Land Registrar", "Public User", "Surveyor");
+    }
+
     @javafx.fxml.FXML
     public void SignUpOA(ActionEvent actionEvent) {
         try {
