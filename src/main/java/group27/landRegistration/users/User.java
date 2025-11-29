@@ -75,6 +75,27 @@ abstract public class User {
                 '}';
     }
 
-    public void editProfile() {
+    public void editProfile(String oldPassword, String newName, String newEmail, LocalDate newDoB) {
+        if (!this.password.equals(oldPassword)) {
+            System.out.println("Incorrect password! Cannot edit profile."); //Will be replaced with warning later!
+            return;
+        }
+
+        if (newName != null && !newName.isEmpty()) {
+            this.name = newName;
+        }
+        if (newEmail != null && !newEmail.isEmpty()) {
+            this.Email = newEmail;
+        }
+        if (password != null && !password.isEmpty()) {
+            this.password = password;
+        }
+        if (phoneNumber > 0) {
+            this.phoneNumber = phoneNumber;
+        }
+        if (newDoB != null) {
+            this.DoB = newDoB;
+        }
     }
+
 }
