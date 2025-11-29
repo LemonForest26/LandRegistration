@@ -3,17 +3,26 @@ package group27.landRegistration.users;
 import java.time.LocalDate;
 
 abstract public class User {
+    private static int idCounter = 100000000;
+
+    protected int userID;             // each user gets their own ID
     protected String name, password, Email;
     protected long NID, phoneNumber;
     protected LocalDate DoB;
 
     public User(String name, String password, String email, long NID, long phoneNumber, LocalDate doB) {
+        this.userID = idCounter++;  // auto-generate ID here
+
         this.name = name;
         this.password = password;
         Email = email;
         this.NID = NID;
         this.phoneNumber = phoneNumber;
         DoB = doB;
+    }
+
+    public int getUserID() {
+        return userID;
     }
 
     public long getNID() {
@@ -67,7 +76,8 @@ abstract public class User {
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "userID=" + userID +
+                ", name='" + name + '\'' +
                 ", Email='" + Email + '\'' +
                 ", NID=" + NID +
                 ", phoneNumber=" + phoneNumber +
