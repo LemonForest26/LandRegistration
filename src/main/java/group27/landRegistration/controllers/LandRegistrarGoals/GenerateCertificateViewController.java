@@ -15,4 +15,8 @@ public class GenerateCertificateViewController {
     @javafx.fxml.FXML
     public void GeneratepdfOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }
