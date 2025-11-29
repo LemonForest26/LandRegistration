@@ -8,9 +8,13 @@ public class GenerateCertificateViewController {
     @javafx.fxml.FXML
     private TextField PlotIDTF;
     @javafx.fxml.FXML
-    private DatePicker CertificateDateDP;
+    private TextArea CertificateFilePathTA;
     @javafx.fxml.FXML
-    private TextField OwnerNameTF;
+    private TextField ApplicationIDTF;
+    @javafx.fxml.FXML
+    private TextField OwnerIDTF;
+    @javafx.fxml.FXML
+    private DatePicker IssueDateDP;
 
     @javafx.fxml.FXML
     public void GeneratepdfOA(ActionEvent actionEvent) {

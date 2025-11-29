@@ -6,14 +6,15 @@ public class Certificate {
     private static int IDCounter = 1000;
 
     private int ownerID, certificateID, applicationID;
-    private String  certificationFilePath;
+    private String  certificationFilePath, ownerName;
     private LocalDate issueDate;
 
-    public Certificate(int ownerID, int applicationID, String certificationFilePath, LocalDate issueDate) {
+    public Certificate(int ownerID, int applicationID, String certificationFilePath, String ownerName, LocalDate issueDate) {
         this.certificateID = IDCounter++;
         this.ownerID = ownerID;
         this.applicationID = applicationID;
         this.certificationFilePath = certificationFilePath;
+        this.ownerName = ownerName;
         this.issueDate = issueDate;
     }
 

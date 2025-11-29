@@ -32,7 +32,7 @@
             <PasswordField fx:id="ConfirmPasswordTF" layoutX="590.0" layoutY="456.0" prefHeight="26.0" prefWidth="298.0" promptText="Confirm current password to edit profile" />
             <PasswordField fx:id="NewPasswordTF" layoutX="295.0" layoutY="295.0" prefHeight="26.0" prefWidth="312.0" promptText="New Password" />
             <TextField fx:id="EmailTF" layoutX="294.0" layoutY="237.0" prefHeight="26.0" prefWidth="314.0" promptText="Email" />
-            <Button layoutX="53.0" layoutY="469.0" mnemonicParsing="false" onAction="#HomeOA" text="Home" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="86.0" text="Back" />
          </children>
       </AnchorPane>
    </center>
