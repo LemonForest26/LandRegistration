@@ -10,6 +10,10 @@ public class AnnualIntegritySummaryViewController {
     @javafx.fxml.FXML
     private ComboBox YearDP;
 
+    private void initialize(){
+
+    }
+
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
     }

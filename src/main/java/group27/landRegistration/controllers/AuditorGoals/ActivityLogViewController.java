@@ -14,8 +14,8 @@ public class ActivityLogViewController {
     @javafx.fxml.FXML
     private TableColumn TimestampTC;
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
+    private void initialize(){
+
     }
 
     @javafx.fxml.FXML

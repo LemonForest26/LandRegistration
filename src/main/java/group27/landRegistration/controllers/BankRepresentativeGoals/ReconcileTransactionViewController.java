@@ -14,6 +14,10 @@ public class ReconcileTransactionViewController {
     @javafx.fxml.FXML
     private TableColumn MatchTableColumn;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void gobackOnAction(ActionEvent actionEvent) {
     }

@@ -18,9 +18,6 @@ public class NoticesViewController {
     public void AnnouncementsOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void ZoningUpdatesOA(ActionEvent actionEvent) {

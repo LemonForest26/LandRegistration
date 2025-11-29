@@ -14,8 +14,8 @@ public class QuickDisputeFlagViewController {
     @javafx.fxml.FXML
     private TextField DisputeIDTF;
 
-    @Deprecated
-    public void FinaliseTransferOA(ActionEvent actionEvent) {
+    private void initialize() {
+
     }
 
     @javafx.fxml.FXML

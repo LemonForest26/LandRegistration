@@ -19,10 +19,6 @@ public class EditProfileViewController {
     @javafx.fxml.FXML
     private TextField NameTF;
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
-    }
-
     @javafx.fxml.FXML
     public void SaveProfileOA(ActionEvent actionEvent) {
     }

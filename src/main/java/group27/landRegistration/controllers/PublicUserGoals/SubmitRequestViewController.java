@@ -17,8 +17,9 @@ public class SubmitRequestViewController {
     public void SubmitRequestOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
+
+    private void initialize() {
+
     }
 
     @javafx.fxml.FXML

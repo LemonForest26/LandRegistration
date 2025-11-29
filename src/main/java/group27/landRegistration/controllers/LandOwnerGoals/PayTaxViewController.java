@@ -10,6 +10,10 @@ public class PayTaxViewController {
     @javafx.fxml.FXML
     private TextField PlotIDTF;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void PayTaxOA(ActionEvent actionEvent) {
     }

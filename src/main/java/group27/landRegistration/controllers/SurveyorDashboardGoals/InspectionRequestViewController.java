@@ -10,6 +10,10 @@ public class InspectionRequestViewController {
     @javafx.fxml.FXML
     private TableColumn PendingInspectionTableColumn;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void SubmitOnAction(ActionEvent actionEvent) {
     }

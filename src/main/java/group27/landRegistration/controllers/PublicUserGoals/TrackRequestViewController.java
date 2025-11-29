@@ -14,10 +14,6 @@ public class TrackRequestViewController {
     public void TrackRequestOA(ActionEvent actionEvent) {
     }
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
-    }
-
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
     }

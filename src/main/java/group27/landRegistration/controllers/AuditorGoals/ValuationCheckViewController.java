@@ -19,6 +19,10 @@ public class ValuationCheckViewController {
     @javafx.fxml.FXML
     private TableColumn TimestampTC;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void MarkForReviewOA(ActionEvent actionEvent) {
     }

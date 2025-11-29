@@ -15,6 +15,10 @@ public class ViewMyLandRecordsViewController {
     @javafx.fxml.FXML
     private TableColumn ZoningCol;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void ViewRecordOA(ActionEvent actionEvent) {
     }

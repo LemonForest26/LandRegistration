@@ -17,6 +17,10 @@ public class OfficerPerformanceViewController {
     @javafx.fxml.FXML
     private TableColumn ActionsDP;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void FlagOfficerOA(ActionEvent actionEvent) {
     }

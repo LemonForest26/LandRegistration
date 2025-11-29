@@ -12,6 +12,11 @@ public class DownloadCertificateViewController {
     @javafx.fxml.FXML
     private TableColumn SLNoCol;
 
+    private void initialize(){
+
+    }
+
+
     @javafx.fxml.FXML
     public void DownloadCertificateOA(ActionEvent actionEvent) {
     }
