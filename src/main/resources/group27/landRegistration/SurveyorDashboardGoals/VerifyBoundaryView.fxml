@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="531.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.Controllers.SurveyorDashboardGoals.VerifyBoundaryViewController">
+<AnchorPane prefHeight="531.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.VerifyBoundaryViewController">
    <children>
       <Label layoutX="189.0" layoutY="66.0" text="Boundary Verification">
          <font>

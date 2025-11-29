@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.Controllers.SurveyorDashboardGoals.InspectionRequestViewController">
+<AnchorPane prefHeight="550.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.InspectionRequestViewController">
    <children>
       <Label layoutX="205.0" layoutY="53.0" text="Inspection Tasks">
          <font>

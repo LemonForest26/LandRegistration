@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="474.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.Controllers.BankRepresentativeGoals.ApproveMortgageviewcontroller">
+<AnchorPane prefHeight="474.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ApproveMortgageviewcontroller">
    <children>
       <Label alignment="CENTER" layoutX="127.0" layoutY="52.0" text="Mortagage Approval">
          <font>
