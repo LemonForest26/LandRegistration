@@ -23,7 +23,8 @@
          </font></Text>
       <TextField fx:id="NIDTF" layoutX="354.0" layoutY="248.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter NID" />
       <TextField fx:id="EmailTF" layoutX="354.0" layoutY="210.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter email" />
-      <TextField fx:id="PhoneNumberTF" layoutX="353.0" layoutY="290.0" prefHeight="25.0" prefWidth="242.0" promptText="Enter Phone Number" />
+      <TextField fx:id="PhoneNumberTF" layoutX="389.0" layoutY="290.0" prefHeight="26.0" prefWidth="206.0" promptText="Enter Phone Number" />
       <Button layoutX="356.0" layoutY="518.0" mnemonicParsing="false" onAction="#GoBackOA" prefHeight="25.0" prefWidth="242.0" text="Go Back" />
+      <Text layoutX="356.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+880" />
    </children>
 </AnchorPane>
