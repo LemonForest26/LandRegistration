@@ -17,6 +17,8 @@ public class LockMonthlyReportViewController {
     private TableView MonthlyReportTV;
     @javafx.fxml.FXML
     private TableColumn RegistrarTC;
+    @javafx.fxml.FXML
+    private ComboBox SelectMonthCB;
 
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {

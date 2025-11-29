@@ -35,7 +35,7 @@
                   <TableColumn fx:id="StatusTC" prefWidth="112.79996337890623" text="Status" />
               </columns>
             </TableView>
-            <Button layoutX="298.0" layoutY="403.0" mnemonicParsing="false" onAction="#FlagSampleOA" prefHeight="26.0" prefWidth="307.0" text="Flag Sample" />
+            <Button layoutX="256.0" layoutY="402.0" mnemonicParsing="false" onAction="#FlagSampleOA" prefHeight="26.0" prefWidth="390.0" text="Flag Sample" />
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="75.0" text="Back" />
             <ComboBox fx:id="RegistrarNameCB" layoutX="32.0" layoutY="79.0" prefHeight="26.0" prefWidth="245.0" promptText="Registrar Name" />
             <Button layoutX="313.0" layoutY="79.0" mnemonicParsing="false" onAction="#FilterRegistrarOA" prefHeight="26.0" prefWidth="124.0" text="Filter Registrar" />
