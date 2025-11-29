@@ -19,13 +19,6 @@ public class Report {
         this.generatedOn = generatedOn;
     }
 
-    public static int getIDCounter() {
-        return IDCounter;
-    }
-
-    public static void setIDCounter(int IDCounter) {
-        Report.IDCounter = IDCounter;
-    }
 
     public int getReportID() {
         return ReportID;
