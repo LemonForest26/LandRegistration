@@ -83,6 +83,19 @@ public class Report {
         this.generatedOn = generatedOn;
     }
 
+    @Override
+    public String toString() {
+        return "Report{" +
+                "ReportID=" + ReportID +
+                ", GeneratedByID=" + GeneratedByID +
+                ", generatedByName='" + generatedByName + '\'' +
+                ", type='" + type + '\'' +
+                ", filePath='" + filePath + '\'' +
+                ", content='" + content + '\'' +
+                ", generatedOn=" + generatedOn +
+                '}';
+    }
+
     public void saveReport(String path) {
 
     }
