@@ -9,8 +9,6 @@ public class FinaliseTransferViewController {
     private TextField NewOwnerTF;
     @javafx.fxml.FXML
     private TextField OldNameTF;
-    @javafx.fxml.FXML
-    private DatePicker EffectiveDateDP;
 
     @javafx.fxml.FXML
     public void FinaliseTransferOA(ActionEvent actionEvent) {

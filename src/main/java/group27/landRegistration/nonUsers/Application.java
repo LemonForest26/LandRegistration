@@ -7,14 +7,15 @@ public class Application {
     private static int IDCounter = 1000;
 
     private int applicationID, plotID, applicantID;
-    private String status, notes;
+    private String applicantName, status, notes;
     private LocalDate dateSubmitted, dateUpdated;
     private ArrayList<String> attachments;
 
-    public Application(int applicationID, int plotID, int applicantID, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
+    public Application(int applicationID, int plotID, int applicantID, String applicantName, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
         this.applicationID = IDCounter++;
         this.plotID = plotID;
         this.applicantID = applicantID;
+        this.applicantName = applicantName;
         this.status = status;
         this.notes = notes;
         this.dateSubmitted = dateSubmitted;

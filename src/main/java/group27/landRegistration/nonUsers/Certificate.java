@@ -50,6 +50,22 @@ public class Certificate {
         this.certificationFilePath = certificationFilePath;
     }
 
+    public static int getIDCounter() {
+        return IDCounter;
+    }
+
+    public static void setIDCounter(int IDCounter) {
+        Certificate.IDCounter = IDCounter;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
     public LocalDate getIssueDate() {
         return issueDate;
     }

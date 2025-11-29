@@ -1,6 +1,7 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -15,6 +16,12 @@ public class ReviewPendingApplicationViewController {
     private TableColumn PlotIDTC;
     @javafx.fxml.FXML
     private TableColumn MessageTC;
+    @javafx.fxml.FXML
+    private ComboBox StatusFilterCB;
+    @javafx.fxml.FXML
+    private TableColumn ApplicationIDTC;
+    @javafx.fxml.FXML
+    private TableColumn ApplicantIDTC;
 
     @javafx.fxml.FXML
     public void ViewDetailsOA(ActionEvent actionEvent) {
@@ -22,5 +29,9 @@ public class ReviewPendingApplicationViewController {
 
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void FilterOA(ActionEvent actionEvent) {
     }
 }
