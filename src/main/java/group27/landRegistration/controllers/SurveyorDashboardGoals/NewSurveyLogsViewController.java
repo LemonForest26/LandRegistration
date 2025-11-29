@@ -12,6 +12,10 @@ public class NewSurveyLogsViewController {
     @javafx.fxml.FXML
     private TableColumn SlNoTableColumn;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void GoBackOnAction(ActionEvent actionEvent) {
     }

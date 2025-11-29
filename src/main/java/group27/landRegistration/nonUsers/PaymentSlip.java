@@ -7,15 +7,16 @@ public class PaymentSlip {
 
     private int slipID, ownerID, plotID, transactionID;
     private double amount;
-    private String status;
+    private String paymentMethod, status;
     private LocalDate paymentDate;
 
-    public PaymentSlip(int slipID, int ownerID, int plotID, int transactionID, double amount, String status, LocalDate paymentDate) {
+    public PaymentSlip(int ownerID, int plotID, int transactionID, double amount, String paymentMethod, String status, LocalDate paymentDate) {
         this.slipID = IDCounter++;
         this.ownerID = ownerID;
         this.plotID = plotID;
         this.transactionID = transactionID;
         this.amount = amount;
+        this.paymentMethod = paymentMethod;
         this.status = status;
         this.paymentDate = paymentDate;
     }
@@ -61,6 +62,10 @@ public class PaymentSlip {
         this.amount = amount;
     }
 
+    public String getPaymentMethod() {return paymentMethod;}
+
+    public void setPaymentMethod(String paymentMethod) {this.paymentMethod = paymentMethod;}
+
     public String getStatus() {
         return status;
     }
@@ -78,9 +83,11 @@ public class PaymentSlip {
     }
 
     public void markPaid(int transactionID){
-
+        this.transactionID = transactionID;
+        this.status = "Paid";
+        this.paymentDate = LocalDate.now();
     }
     public boolean isPaid(){
-        return false; //change later
+        return "Paid".equalsIgnoreCase(status);
     }
 }

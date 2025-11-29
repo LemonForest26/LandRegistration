@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AuditorGoals.ReviewUserPermissionsViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AuditorGoals.ReviewUserPermissionsViewController">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +23,7 @@
               <columns>
                 <TableColumn fx:id="ModuleTC" prefWidth="161.0" text="Module" />
                 <TableColumn fx:id="ActionTC" prefWidth="267.0" text="Action" />
-                  <TableColumn fx:id="AcessLevelTC" prefWidth="197.0" text="Access Level" />
+                  <TableColumn fx:id="AccessLevelTC" prefWidth="197.0" text="Access Level" />
               </columns>
             </TableView>
             <Button layoutX="544.0" layoutY="358.0" mnemonicParsing="false" onAction="#MarkForReviewOA" prefHeight="26.0" prefWidth="219.0" text="Mark For Review" />

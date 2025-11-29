@@ -13,9 +13,13 @@ public class ReviewUserPermissionsViewController {
     @javafx.fxml.FXML
     private TableColumn ActionTC;
     @javafx.fxml.FXML
-    private TableColumn AcessLevelTC;
-    @javafx.fxml.FXML
     private TableColumn ModuleTC;
+    @javafx.fxml.FXML
+    private TableColumn AccessLevelTC;
+
+    private void initialize() {
+
+    }
 
     @javafx.fxml.FXML
     public void MarkForReviewOA(ActionEvent actionEvent) {

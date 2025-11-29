@@ -10,6 +10,10 @@ public class SendPaymentNoticeviewcontroller {
     @javafx.fxml.FXML
     private TextField TransactionIDTextField;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void SubmitOnAction(ActionEvent actionEvent) {
     }

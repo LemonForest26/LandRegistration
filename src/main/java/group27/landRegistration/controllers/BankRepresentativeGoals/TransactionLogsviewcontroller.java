@@ -12,6 +12,10 @@ public class TransactionLogsviewcontroller {
     @javafx.fxml.FXML
     private TableView TransactionListTableview;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void GoBackOnAction(ActionEvent actionEvent) {
     }

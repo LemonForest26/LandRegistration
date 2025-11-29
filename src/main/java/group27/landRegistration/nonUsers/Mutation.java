@@ -1,6 +1,7 @@
 package group27.landRegistration.nonUsers;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Mutation {
     private static int IDCounter = 100000;
@@ -9,7 +10,7 @@ public class Mutation {
     private String status, remarks;
     private LocalDate requestDate, approvalDate;
 
-    public Mutation(int mutationID, int plotID, int oldOwnerID, int newOwnerID, String status, String remarks, LocalDate requestDate, LocalDate approvalDate) {
+    public Mutation(int plotID, int oldOwnerID, int newOwnerID, String status, String remarks, LocalDate requestDate, LocalDate approvalDate) {
         this.mutationID = IDCounter++;
         this.plotID = plotID;
         this.oldOwnerID = oldOwnerID;
@@ -20,6 +21,18 @@ public class Mutation {
         this.approvalDate = approvalDate;
     }
 
+    public Mutation(int plotID, int ownerID, String correctionText) {
+        this.mutationID = IDCounter++;
+        this.plotID = plotID;
+        this.oldOwnerID = ownerID;
+        this.newOwnerID = ownerID; // or -1
+        this.status = "Correction Requested";
+        this.remarks = correctionText;
+        this.requestDate = LocalDate.now();
+        this.approvalDate = null;
+    }
+
+    public static ArrayList<Mutation> mutationList = new ArrayList<>();
 
     public int getMutationID() {
         return mutationID;

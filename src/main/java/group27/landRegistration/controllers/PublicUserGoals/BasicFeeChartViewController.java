@@ -14,8 +14,9 @@ public class BasicFeeChartViewController {
     @javafx.fxml.FXML
     private TableColumn TaxRateCol;
 
-    @Deprecated
-    public void HomeOA(ActionEvent actionEvent) {
+
+    private void initialize() {
+
     }
 
     @javafx.fxml.FXML

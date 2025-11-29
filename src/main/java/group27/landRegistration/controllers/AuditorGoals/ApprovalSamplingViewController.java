@@ -26,6 +26,10 @@ public class ApprovalSamplingViewController {
     @javafx.fxml.FXML
     private TableColumn ApplicationIDTC;
 
+    private void initialize(){
+
+    }
+
     @javafx.fxml.FXML
     public void FilterRegistrarOA(ActionEvent actionEvent) {
     }

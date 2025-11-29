@@ -13,9 +13,10 @@ public class UpdateZoningViewController {
     @javafx.fxml.FXML
     private ComboBox NewZoningCB;
 
-    @Deprecated
-    public void SaveZoning(ActionEvent actionEvent) {
+    private void initialize() {
+
     }
+
 
     @javafx.fxml.FXML
     public void SaveZoningOA(ActionEvent actionEvent) {

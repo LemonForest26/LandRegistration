@@ -23,6 +23,10 @@ public class ReviewPendingApplicationViewController {
     @javafx.fxml.FXML
     private TableColumn ApplicantIDTC;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void ViewDetailsOA(ActionEvent actionEvent) {
     }

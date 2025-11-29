@@ -21,6 +21,10 @@ public class LockMonthlyReportViewController {
     @javafx.fxml.FXML
     private ComboBox SelectMonthCB;
 
+    private void initialize() {
+
+    }
+
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
     }
