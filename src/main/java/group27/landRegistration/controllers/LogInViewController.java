@@ -1,4 +1,4 @@
-package group27.landRegistration.controllers;
+package group27.landRegistration.Controllers;
 
 import group27.landRegistration.PageLoader;
 import javafx.event.ActionEvent;
