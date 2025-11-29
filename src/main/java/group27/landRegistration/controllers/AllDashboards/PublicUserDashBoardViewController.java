@@ -8,7 +8,7 @@ public class PublicUserDashBoardViewController {
     public void NoticesOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SearchPlotIDOA(ActionEvent actionEvent) {
     }
 
@@ -28,15 +28,27 @@ public class PublicUserDashBoardViewController {
     public void VerifyCertificateOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void PublicMapsOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void SearchByAreaOA(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void LogOutOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void SearchPlotOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BasicFeeChartOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void EditProfileOA(ActionEvent actionEvent) {
     }
 }
