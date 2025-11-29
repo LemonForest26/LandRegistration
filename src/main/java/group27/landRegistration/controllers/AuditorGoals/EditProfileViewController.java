@@ -9,8 +9,6 @@ public class EditProfileViewController {
     @javafx.fxml.FXML
     private DatePicker DoBDP;
     @javafx.fxml.FXML
-    private TextField AddressTF;
-    @javafx.fxml.FXML
     private PasswordField NewPasswordTF;
     @javafx.fxml.FXML
     private PasswordField ConfirmPasswordTF;
