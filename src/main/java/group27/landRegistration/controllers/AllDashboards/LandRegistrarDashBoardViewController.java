@@ -15,7 +15,7 @@ public class LandRegistrarDashBoardViewController {
     public void ZoningUpdateOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void DailySummaryReportOA(ActionEvent actionEvent) {
     }
 
@@ -37,5 +37,9 @@ public class LandRegistrarDashBoardViewController {
 
     @javafx.fxml.FXML
     public void TransferOwnershipOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void EditProfileOA(ActionEvent actionEvent) {
     }
 }
