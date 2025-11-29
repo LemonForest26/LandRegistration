@@ -13,4 +13,8 @@ public class TrackApplicationViewController {
     @javafx.fxml.FXML
     public void TrackOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

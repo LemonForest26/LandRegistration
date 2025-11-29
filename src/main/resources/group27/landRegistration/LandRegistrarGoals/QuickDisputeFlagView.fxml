@@ -28,9 +28,10 @@
             <Text layoutX="293.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dispute ID" />
             <TextField fx:id="DisputeIDTF" layoutX="293.0" layoutY="75.0" prefHeight="26.0" prefWidth="244.0" />
             <Text layoutX="295.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Short Note:" />
-            <Button layoutX="291.0" layoutY="287.0" mnemonicParsing="false" onAction="#FinaliseTransferOA" prefHeight="26.0" prefWidth="248.0" text="Finalise Transfer" />
+            <Button layoutX="291.0" layoutY="287.0" mnemonicParsing="false" onAction="#AssignSurveyorOA" prefHeight="26.0" prefWidth="248.0" text="Assign Surveyor" />
             <TextArea fx:id="ShortNoteTA" layoutX="293.0" layoutY="117.0" prefHeight="102.0" prefWidth="242.0" />
             <ComboBox fx:id="SurveyorListCB" layoutX="292.0" layoutY="243.0" prefHeight="27.0" prefWidth="246.0" promptText="Surveyor List" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="106.0" text="Back" />
          </children>
       </AnchorPane>
    </center>

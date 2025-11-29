@@ -18,4 +18,8 @@ public class ViewMyLandRecordsViewController {
     @javafx.fxml.FXML
     public void ViewRecordOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

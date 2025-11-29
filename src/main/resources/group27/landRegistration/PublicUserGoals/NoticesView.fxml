@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.NoticesViewController">
    <top>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -38,7 +37,7 @@
             <Button mnemonicParsing="false" onAction="#AnnouncementsOA" prefHeight="25.0" prefWidth="151.0" text="Announcements" />
             <Button mnemonicParsing="false" onAction="#AuctionsOA" prefHeight="25.0" prefWidth="143.0" text="Auctions" />
             <Button mnemonicParsing="false" onAction="#ZoningUpdatesOA" prefHeight="25.0" prefWidth="145.0" text="Zoning Updates" />
-            <Button mnemonicParsing="false" onAction="#HomeOA" prefHeight="0.0" prefWidth="134.0" text="Home" />
+            <Button mnemonicParsing="false" onAction="#BackOA" prefHeight="0.0" prefWidth="134.0" text="Back" />
          </children>
       </VBox>
    </left>

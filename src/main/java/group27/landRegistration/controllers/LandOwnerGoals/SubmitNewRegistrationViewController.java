@@ -17,4 +17,8 @@ public class SubmitNewRegistrationViewController {
     @javafx.fxml.FXML
     public void SubmitRegistrationOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

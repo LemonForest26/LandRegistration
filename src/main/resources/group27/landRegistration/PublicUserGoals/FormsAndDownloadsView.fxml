@@ -21,19 +21,13 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <ListView fx:id="FormListView" layoutX="193.0" layoutY="56.0" prefHeight="200.0" prefWidth="313.0" />
             <Button layoutX="299.0" layoutY="291.0" mnemonicParsing="false" onAction="#DownloadFormOA" text="Download Form" />
+            <Button layoutX="606.0" layoutY="409.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="65.0" text="Back" />
          </children>
       </AnchorPane>
    </center>
-   <bottom>
-      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#HomeOA" text="Home" />
-         </children>
-      </HBox>
-   </bottom>
 
 </BorderPane>

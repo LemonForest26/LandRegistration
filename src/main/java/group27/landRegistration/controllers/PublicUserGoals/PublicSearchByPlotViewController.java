@@ -26,7 +26,7 @@ public class PublicSearchByPlotViewController {
     @javafx.fxml.FXML
     private TextField LocationNameTF;
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void HomeOA(ActionEvent actionEvent) {
     }
 
@@ -36,5 +36,9 @@ public class PublicSearchByPlotViewController {
 
     @javafx.fxml.FXML
     public void FilterOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

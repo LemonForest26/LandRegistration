@@ -22,4 +22,8 @@ public class ApproveRejectApplicationViewController {
     @javafx.fxml.FXML
     public void ApproveOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

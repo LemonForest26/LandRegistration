@@ -13,4 +13,8 @@ public class RequestCorrectionMutationViewController {
     @javafx.fxml.FXML
     public void SubmitCorrectionOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

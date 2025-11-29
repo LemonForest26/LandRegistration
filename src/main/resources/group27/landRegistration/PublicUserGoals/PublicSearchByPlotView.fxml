@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.PublicSearchByPlotViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.PublicSearchByPlotViewController">
    <top>
       <HBox alignment="BOTTOM_CENTER" prefHeight="87.0" prefWidth="765.0" BorderPane.alignment="CENTER">
          <children>
@@ -36,7 +36,7 @@
               </columns>
             </TableView>
             <Button layoutX="418.0" layoutY="82.0" mnemonicParsing="false" onAction="#SearchPlotOA" text="Search Plot" />
-            <Button layoutX="659.0" layoutY="404.0" mnemonicParsing="false" onAction="#HomeOA" text="Home" />
+            <Button layoutX="656.0" layoutY="404.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="53.0" text="Back" />
             <ComboBox fx:id="DistrictCB" layoutX="251.0" layoutY="274.0" prefWidth="150.0" promptText="District" />
             <ComboBox fx:id="DivisionCB" layoutX="84.0" layoutY="274.0" prefWidth="150.0" promptText="Division" />
             <TextField fx:id="LocationNameTF" layoutX="430.0" layoutY="274.0" promptText="Location name" />

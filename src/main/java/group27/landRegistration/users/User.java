@@ -1,5 +1,7 @@
 package group27.landRegistration.users;
 
+import group27.landRegistration.PageLoader;
+
 import java.time.LocalDate;
 
 abstract public class User {
@@ -96,6 +98,10 @@ abstract public class User {
         if (newDoB != null) {
             this.DoB = newDoB;
         }
+    }
+
+    public void logOut() {
+
     }
 
 }

@@ -1,6 +1,7 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -13,7 +14,15 @@ public class QuickDisputeFlagViewController {
     @javafx.fxml.FXML
     private TextField DisputeIDTF;
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void FinaliseTransferOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void AssignSurveyorOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

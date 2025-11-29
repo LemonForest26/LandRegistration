@@ -9,18 +9,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.ViewMyLandRecordsViewController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="RecordTableView" layoutX="172.0" layoutY="40.0" prefHeight="256.0" prefWidth="340.0">
+            <TableView fx:id="RecordTableView" layoutX="172.0" layoutY="53.0" prefHeight="256.0" prefWidth="340.0">
               <columns>
                 <TableColumn fx:id="PlotIDCol" prefWidth="98.0" text="Plot ID" />
                 <TableColumn fx:id="AreaCol" prefWidth="129.0" text="Area" />
                   <TableColumn fx:id="ZoningCol" prefWidth="112.0" text="Zoning" />
               </columns>
             </TableView>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="60.0" text="Back" />
          </children>
       </AnchorPane>
    </center>

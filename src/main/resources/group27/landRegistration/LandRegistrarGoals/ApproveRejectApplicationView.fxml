@@ -23,7 +23,7 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane layoutX="262.0" layoutY="39.0" prefHeight="262.0" prefWidth="277.0" style="-fx-background-color: white;">
                <children>
@@ -39,6 +39,7 @@
             </AnchorPane>
             <Button layoutX="262.0" layoutY="329.0" mnemonicParsing="false" onAction="#ApproveOA" prefHeight="26.0" prefWidth="106.0" text="Approve" />
             <Button layoutX="433.0" layoutY="329.0" mnemonicParsing="false" onAction="#RejectOA" prefHeight="26.0" prefWidth="106.0" text="Reject" />
+            <Button layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="85.0" text="Back" />
          </children>
       </AnchorPane>
    </center>

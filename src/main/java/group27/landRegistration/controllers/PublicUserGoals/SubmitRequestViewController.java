@@ -9,15 +9,19 @@ public class SubmitRequestViewController {
     @javafx.fxml.FXML
     private TextArea MessageTA;
     @javafx.fxml.FXML
-    private ComboBox RequestTypeTF;
-    @javafx.fxml.FXML
     private TextField NameTF;
+    @javafx.fxml.FXML
+    private ComboBox RequestTypeCB;
 
     @javafx.fxml.FXML
     public void SubmitRequestOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void HomeOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

@@ -23,8 +23,8 @@ public class SignUpViewController {
     @javafx.fxml.FXML
     private TextField PasswordTF;
 
-    @Deprecated
-    public void SignUpOnAction(ActionEvent actionEvent) {
+    public void initialize() {
+        UserCB.getItems().addAll("Auditor", "Bank Representative", "");
     }
 
     @javafx.fxml.FXML

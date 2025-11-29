@@ -13,8 +13,14 @@ public class ReviewPendingApplicationViewController {
     private TableColumn StatusTC;
     @javafx.fxml.FXML
     private TableColumn PlotIDTC;
+    @javafx.fxml.FXML
+    private TableColumn MessageTC;
 
     @javafx.fxml.FXML
     public void ViewDetailsOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }
