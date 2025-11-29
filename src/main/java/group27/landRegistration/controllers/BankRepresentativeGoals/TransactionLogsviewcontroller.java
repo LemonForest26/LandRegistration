@@ -1,5 +1,9 @@
 package group27.landRegistration.controllers.BankRepresentativeGoals;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+
 public class TransactionLogsviewcontroller {
     @javafx.fxml.FXML
     private TableColumn TransactionListTableColumn;

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="557.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.DisputeEvidenceViewController">
+<AnchorPane prefHeight="557.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.Controllers.SurveyorDashboardGoals.DisputeEvidenceViewController">
    <children>
       <Label layoutX="235.0" layoutY="33.0" text="Dispute Evidence">
          <font>

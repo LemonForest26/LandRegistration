@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="514.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.StartNewSurveyViewController">
+<AnchorPane prefHeight="514.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.Controllers.SurveyorDashboardGoals.StartNewSurveyViewController">
    <children>
       <Label layoutX="182.0" layoutY="69.0" text="New Survey Entry">
          <font>
