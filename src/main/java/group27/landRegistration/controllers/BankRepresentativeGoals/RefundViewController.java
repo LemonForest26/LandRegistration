@@ -1,10 +1,13 @@
 package group27.landRegistration.controllers.BankRepresentativeGoals;
 
-public class SendPaymentNoticeviewcontroller {
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
+
+public class RefundViewController {
     @javafx.fxml.FXML
-    private ComboBox NotificationTypeComboBox;
+    private TextField Amounttextfield;
     @javafx.fxml.FXML
-    private TextField TransactionIDTextField;
+    private TextField ApplicationIdTextField;
 
     @javafx.fxml.FXML
     public void SubmitOnAction(ActionEvent actionEvent) {

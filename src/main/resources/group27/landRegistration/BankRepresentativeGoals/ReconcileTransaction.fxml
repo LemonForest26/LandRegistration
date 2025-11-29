@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="502.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ReconcileTransactionViewController">
+   <children>
+      <Label layoutX="184.0" layoutY="39.0" text="Reconciliation">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ReconciliationTableView" layoutX="149.0" layoutY="151.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+          <TableColumn fx:id="BankstatusTablecolumn" prefWidth="152.0000762939453" text="Bank Status" />
+          <TableColumn fx:id="RegistryStatusTablecolumn" prefWidth="144.7999267578125" text="Registry Status" />
+            <TableColumn fx:id="MatchTableColumn" prefWidth="89.60003662109375" text="Match" />
+        </columns>
+      </TableView>
+      <Button layoutX="481.0" layoutY="412.0" mnemonicParsing="false" onAction="#gobackOnAction" prefHeight="38.0" prefWidth="114.0" text="Go Back" />
+   </children>
+</AnchorPane>
