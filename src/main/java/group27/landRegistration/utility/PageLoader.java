@@ -1,4 +1,4 @@
-package group27.landRegistration;
+package group27.landRegistration.utility;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,15 +10,15 @@ import java.io.IOException;
 
 public class PageLoader {
 
-    public void start(String fxmlFile, ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource(fxmlFile)
+    public void load(String viewPath, ActionEvent event) throws IOException {
+
+        Scene scene = new Scene(
+                FXMLLoader.load(getClass().getResource(viewPath))
         );
 
-        Scene scene = new Scene(loader.load());
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("Land Registration of Bangladesh");
+
+//        stage.setTitle("Land Registration of Bangladesh");
         stage.setScene(scene);
         stage.show();
     }

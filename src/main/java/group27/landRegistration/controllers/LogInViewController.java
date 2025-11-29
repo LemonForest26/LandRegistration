@@ -1,9 +1,7 @@
 package group27.landRegistration.controllers;
 
-import group27.landRegistration.PageLoader;
+import group27.landRegistration.utility.PageLoader;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -23,7 +21,7 @@ public class LogInViewController {
     public void SignUpOA(ActionEvent actionEvent) {
         try {
             PageLoader page = new PageLoader();
-            page.start("SignUpView.fxml", actionEvent);
+            page.load("/group27/landRegistration/SignUpView.fxml", actionEvent);
         } catch (Exception e) {
             e.printStackTrace();
         }
