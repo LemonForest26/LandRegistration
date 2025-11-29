@@ -13,4 +13,8 @@ public class PayTaxViewController {
     @javafx.fxml.FXML
     public void PayTaxOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }

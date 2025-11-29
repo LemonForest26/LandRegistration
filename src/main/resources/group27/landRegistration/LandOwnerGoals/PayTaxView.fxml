@@ -24,7 +24,7 @@
       </HBox>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" layoutX="238.0" layoutY="73.0" prefHeight="200.0" prefWidth="231.0">
                <children>
@@ -35,6 +35,7 @@
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#PayTaxOA" text="Pay Tax" />
                </children>
             </VBox>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" text="Back" />
          </children>
       </AnchorPane>
    </center>

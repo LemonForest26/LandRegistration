@@ -15,4 +15,8 @@ public class DownloadCertificateViewController {
     @javafx.fxml.FXML
     public void DownloadCertificateOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
+    }
 }
