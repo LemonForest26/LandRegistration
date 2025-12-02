@@ -135,7 +135,7 @@ abstract public class User {
             if(gender!= null) setGender(gender);
             if(NID != 0 && String.valueOf(NID).length() == 17) setNID(NID);
             if(phoneNumber != 0 && String.valueOf(phoneNumber).length() == 10) setPhoneNumber(phoneNumber);
-            if(doB !=null /*&& something*/) setDoB(doB);
+            if(doB !=null /* && something */) setDoB(doB);
         }
         else {
             //Alert message
