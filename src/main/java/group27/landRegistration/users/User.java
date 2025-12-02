@@ -5,14 +5,15 @@ import java.time.LocalDate;
 abstract public class User {
     private static int idCounter = 100000000;
 
-    protected int userID;             // each user gets their own ID
+    protected int userID;             // each user gets his/her own ID
     protected String name, password, Email, gender;
     protected long NID, phoneNumber;
     protected LocalDate DoB;
 
 
     public User(String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
-        this.userID = userID;
+        idCounter++;
+        this.userID = idCounter;
         this.name = name;
         this.password = password;
         Email = email;
