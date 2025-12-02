@@ -1,5 +1,8 @@
 package group27.landRegistration.users;
 
+import group27.landRegistration.utility.customAlert;
+import javafx.scene.control.Alert;
+
 import java.time.LocalDate;
 
 abstract public class User {
@@ -138,7 +141,8 @@ abstract public class User {
             if(doB !=null /* && something */) setDoB(doB);
         }
         else {
-            //Alert message
+            CustomAlert alert = new CustomAlert(ERROR, "Error Alert!", "Wrong Password!", "Your confirm password must match with your given password.");
+
         }
     }
 
