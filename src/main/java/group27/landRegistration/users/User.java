@@ -11,7 +11,7 @@ abstract public class User {
     protected LocalDate DoB;
 
 
-    public User(int userID, String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
+    public User(String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
         this.userID = userID;
         this.name = name;
         this.password = password;
@@ -32,10 +32,6 @@ abstract public class User {
 
     public int getUserID() {
         return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
     }
 
     public String getName() {
@@ -130,8 +126,19 @@ abstract public class User {
         }
     }
 
-    public void logOut() {
-
+    public void editProfile(String password, String name, String newPassword, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
+        if(this.password.equals(password)) {
+            if(name != null) setName(name);
+            if(newPassword != null) setPassword(newPassword);
+            if(email != null) setEmail(email);
+            if(gender!= null) setGender(gender);
+            if(NID != 0 && String.valueOf(NID).length() == 17) setNID(NID);
+            if(phoneNumber != 0 && String.valueOf(phoneNumber).length() == 10) setPhoneNumber(phoneNumber);
+            if(doB !=null /*&& something*/) setDoB(doB);
+        }
+        else {
+            //Alert message
+        }
     }
 
 }
