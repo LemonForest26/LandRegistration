@@ -1,6 +1,6 @@
 package group27.landRegistration.controllers;
 
-import group27.landRegistration.utility.PageLoader;
+import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -34,7 +34,7 @@ public class SignUpViewController {
     @javafx.fxml.FXML
     public void GoBackOA(ActionEvent actionEvent) {
         try {
-            PageLoader page = new PageLoader();
+            CurrentPageLoader page = new CurrentPageLoader();
             page.load("/group27/landRegistration/LogInView.fxml", actionEvent);
         } catch (Exception e) {
             e.printStackTrace();

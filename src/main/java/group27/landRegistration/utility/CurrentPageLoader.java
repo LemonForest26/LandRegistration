@@ -8,18 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PageLoader {
+public class CurrentPageLoader {
 
     public void load(String viewPath, ActionEvent event) throws IOException {
+        try {
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource(viewPath)));
 
-        Scene scene = new Scene(
-                FXMLLoader.load(getClass().getResource(viewPath))
-        );
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 //        stage.setTitle("Land Registration of Bangladesh");
-        stage.setScene(scene);
-        stage.show();
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (Exception e) {
+            //exception...
+        }
     }
 }
