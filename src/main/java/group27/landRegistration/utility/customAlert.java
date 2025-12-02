@@ -1,7 +1,7 @@
 package group27.landRegistration.utility;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+//import javafx.scene.control.ButtonType;
 
 public class customAlert {
 
@@ -11,6 +11,5 @@ public class customAlert {
         alert.setHeaderText(headText);
         alert.setContentText(message);
         alert.showAndWait();
-
     }
 }
