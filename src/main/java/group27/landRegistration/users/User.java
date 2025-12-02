@@ -1,6 +1,6 @@
 package group27.landRegistration.users;
 
-import group27.landRegistration.utility.customAlert;
+import group27.landRegistration.utility.CustomAlert;
 import javafx.scene.control.Alert;
 
 import java.time.LocalDate;
