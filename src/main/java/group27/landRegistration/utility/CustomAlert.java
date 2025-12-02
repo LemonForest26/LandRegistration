@@ -3,13 +3,14 @@ package group27.landRegistration.utility;
 import javafx.scene.control.Alert;
 //import javafx.scene.control.ButtonType;
 
-public class customAlert {
+public class CustomAlert {
 
-    public void message(Alert.AlertType a, String title, String headText, String message) {
-        Alert alert = new Alert(a);
+    public static void show(Alert.AlertType type, String title, String header, String message) {
+        Alert alert = new Alert(type);
         alert.setTitle(title);
-        alert.setHeaderText(headText);
+        alert.setHeaderText(header);
         alert.setContentText(message);
         alert.showAndWait();
     }
 }
+
