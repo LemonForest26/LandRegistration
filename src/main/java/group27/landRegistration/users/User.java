@@ -6,31 +6,36 @@ abstract public class User {
     private static int idCounter = 100000000;
 
     protected int userID;             // each user gets their own ID
-    protected String name, password, Email;
+    protected String name, password, Email, gender;
     protected long NID, phoneNumber;
     protected LocalDate DoB;
 
-    public User(String name, String password, String email, long NID, long phoneNumber, LocalDate doB) {
-        this.userID = idCounter++;  // auto-generate ID here
 
+    public User(int userID, String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
+        this.userID = userID;
         this.name = name;
         this.password = password;
         Email = email;
+        this.gender = gender;
         this.NID = NID;
         this.phoneNumber = phoneNumber;
         DoB = doB;
+    }
+
+    public static int getIdCounter() {
+        return idCounter;
+    }
+
+    public static void setIdCounter(int idCounter) {
+        User.idCounter = idCounter;
     }
 
     public int getUserID() {
         return userID;
     }
 
-    public long getNID() {
-        return NID;
-    }
-
-    public void setNID(long NID) {
-        this.NID = NID;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getName() {
@@ -57,6 +62,22 @@ abstract public class User {
         Email = email;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public long getNID() {
+        return NID;
+    }
+
+    public void setNID(long NID) {
+        this.NID = NID;
+    }
+
     public long getPhoneNumber() {
         return phoneNumber;
     }
@@ -79,6 +100,7 @@ abstract public class User {
                 "userID=" + userID +
                 ", name='" + name + '\'' +
                 ", Email='" + Email + '\'' +
+                ", gender='" + gender + '\'' +
                 ", NID=" + NID +
                 ", phoneNumber=" + phoneNumber +
                 ", DoB=" + DoB +

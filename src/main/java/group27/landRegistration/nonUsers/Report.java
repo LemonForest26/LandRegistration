@@ -6,13 +6,12 @@ public class Report {
    private static int IDCounter = 100000;
 
     private int ReportID, GeneratedByID;
-    private String generatedByName, type, filePath, content;
+    private String type, filePath, content;
     private LocalDate generatedOn;
 
-    public Report(int generatedByID, String generatedByName, String type, String filePath, String content, LocalDate generatedOn) {
+    public Report(int generatedByID, String type, String filePath, String content, LocalDate generatedOn) {
         this.ReportID = IDCounter++;
         this.GeneratedByID = generatedByID;
-        this.generatedByName = generatedByName;
         this.type = type;
         this.filePath = filePath;
         this.content = content;
@@ -34,14 +33,6 @@ public class Report {
 
     public void setGeneratedByID(int generatedByID) {
         GeneratedByID = generatedByID;
-    }
-
-    public String getGeneratedByName() {
-        return generatedByName;
-    }
-
-    public void setGeneratedByName(String generatedByName) {
-        this.generatedByName = generatedByName;
     }
 
     public String getType() {
@@ -81,7 +72,6 @@ public class Report {
         return "Report{" +
                 "ReportID=" + ReportID +
                 ", GeneratedByID=" + GeneratedByID +
-                ", generatedByName='" + generatedByName + '\'' +
                 ", type='" + type + '\'' +
                 ", filePath='" + filePath + '\'' +
                 ", content='" + content + '\'' +

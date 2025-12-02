@@ -4,8 +4,9 @@ import java.time.LocalDate;
 
 public class PublicUser extends User{
     protected String address;
-    public PublicUser(String address, String name, String password, String email, long NID, long phoneNumber, LocalDate doB) {
-        super(name, password, email, NID, phoneNumber, doB);
+
+    public PublicUser(int userID, String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB, String address) {
+        super(userID, name, password, email, gender, NID, phoneNumber, doB);
         this.address = address;
     }
 }
