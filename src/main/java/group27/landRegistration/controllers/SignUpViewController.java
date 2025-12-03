@@ -22,9 +22,12 @@ public class SignUpViewController {
     private ComboBox UserCB;
     @javafx.fxml.FXML
     private TextField PasswordTF;
+    @javafx.fxml.FXML
+    private ComboBox GenderCB;
 
     public void initialize() {
         UserCB.getItems().addAll("Auditor", "Bank Representative", "Land Owner", "Land Registrar", "Public User", "Surveyor");
+        GenderCB.getItems().addAll("Male", "Female");
     }
 
     @javafx.fxml.FXML
