@@ -43,8 +43,8 @@ public class BankRepresentativeDashboardViewController
     public void BacktoHomePageOnAction(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/LandRegistration/AllDashboards/BankRepresentativeDashboardView.fxml", actionEvent);
-        }catch (Exception e){
+            page.load("/group27/landRegistration/LogInView.fxml", actionEvent);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

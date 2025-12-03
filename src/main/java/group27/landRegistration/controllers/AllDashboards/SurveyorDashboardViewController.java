@@ -18,8 +18,8 @@ public class SurveyorDashboardViewController {
     public void BackToHomepageOnAction(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/LandRegistration/AllDashboards/SurveyorDashboardGoalsViewController.fxml", actionEvent);
-        }catch (Exception e){
+            page.load("/group27/landRegistration/LogInView.fxml", actionEvent);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
