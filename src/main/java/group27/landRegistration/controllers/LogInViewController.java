@@ -28,10 +28,29 @@ public class LogInViewController {
     }
 
     @javafx.fxml.FXML
-    public void ForgetPasswordOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
     public void SignInOA(ActionEvent actionEvent) {
+        String userType = (String) UserTypeCB.getValue();
+        String userID = UserIDTF.getText().trim();
+        String password = PasswordTF.getText().trim();
+
+        // Input validation
+        if (userType == null || userType.isEmpty()) {
+            System.out.println("Select a user type!");
+            return;
+        }
+
+        if (userID.isEmpty()) {
+            System.out.println("User ID cannot be empty!");
+            return;
+        }
+
+        if (password.isEmpty()) {
+            System.out.println("Password cannot be empty!");
+            return;
+        }
+
+        // If all good, search user in file
+
+
     }
 }

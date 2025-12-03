@@ -3,9 +3,10 @@ package group27.landRegistration.users;
 import group27.landRegistration.utility.CustomAlert;
 import javafx.scene.control.Alert;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-abstract public class User {
+abstract public class User implements Serializable {
     private static int idCounter = 100000000;
 
     protected int userID;             // each user gets his/her own ID
@@ -144,6 +145,9 @@ abstract public class User {
             CustomAlert.show(Alert.AlertType.ERROR, "Error Alert!", "Wrong Password!", "Your confirm password must match with your given password.");
 
         }
+    }
+    public boolean verifyPassword(String input) {
+        return this.password.equals(input);
     }
 
 }
