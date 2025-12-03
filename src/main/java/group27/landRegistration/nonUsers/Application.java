@@ -7,15 +7,14 @@ public class Application {
     private static int IDCounter = 1000;
 
     private int applicationID, plotID, applicantID;
-    private String applicantName, status, notes;
+    private String status, notes;
     private LocalDate dateSubmitted, dateUpdated;
     private ArrayList<String> attachments;
 
-    public Application(int applicationID, int plotID, int applicantID, String applicantName, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
+    public Application(int plotID, int applicantID, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
         this.applicationID = IDCounter++;
         this.plotID = plotID;
         this.applicantID = applicantID;
-        this.applicantName = applicantName;
         this.status = status;
         this.notes = notes;
         this.dateSubmitted = dateSubmitted;
@@ -81,15 +80,17 @@ public class Application {
     @Override
     public String toString() {
         return "Application{" +
-                "applicationID='" + applicationID + '\'' +
-                ", plotID='" + plotID + '\'' +
+                "applicationID=" + applicationID +
+                ", plotID=" + plotID +
+                ", applicantID=" + applicantID +
                 ", status='" + status + '\'' +
                 ", notes='" + notes + '\'' +
-                ", applicantID=" + applicantID +
                 ", dateSubmitted=" + dateSubmitted +
                 ", dateUpdated=" + dateUpdated +
+                ", attachments=" + attachments +
                 '}';
     }
+
     public void updateStatus(String newStatus){
 
     }
