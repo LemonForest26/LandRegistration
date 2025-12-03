@@ -29,7 +29,6 @@
             <VBox layoutX="204.0" layoutY="36.0" prefHeight="268.0" prefWidth="295.0">
                <children>
                   <Label />
-                  <TextField fx:id="OwnerNameTF" promptText="Owner Name" />
                   <Label />
                   <TextField fx:id="PlotIDTF" promptText="Plot ID" />
                   <Label />
