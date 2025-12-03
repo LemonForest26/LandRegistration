@@ -1,5 +1,6 @@
 package group27.landRegistration.controllers.BankRepresentativeGoals;
 
+import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.chart.PieChart;
 
@@ -9,6 +10,12 @@ public class PaymentVerificationPieChartViewController {
 
     @javafx.fxml.FXML
     public void BackOnAction(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/AuditorGoals/AuditorDashboardView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
