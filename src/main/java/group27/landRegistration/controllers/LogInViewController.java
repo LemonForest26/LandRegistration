@@ -55,9 +55,15 @@ public class LogInViewController {
             FileManager<User> file = new FileManager<>("users.dat");
             List<User> allUsers = file.loadList();
 
-            User matchedUser = allUsers.stream().filter(u -> u.getUserID() == enteredID).findFirst().orElse(null);
+            User matchedUser = null;
 
             // ========== SEARCH FOR USER BASED ON ID ==========
+            for (User u : allUsers) {
+                if (u.getUserID() == enteredID) {
+                    matchedUser = u;
+                    break;
+                }
+            }
 
             if (matchedUser == null) {
                 CustomAlert.show(Alert.AlertType.ERROR, "Invalid Login",
@@ -84,19 +90,7 @@ public class LogInViewController {
             String fxmlPath = getDashboardForUser(matchedUser);
 
             if (fxmlPath != null) {
-                page.loadWithData(
-                        fxmlPath,
-                        actionEvent,
-                        controller -> {
-                            try {
-                                controller.getClass()
-                                        .getMethod("setUserData", User.class)
-                                        .invoke(controller, matchedUser);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                );
+                page.load(fxmlPath, actionEvent);
             } else {
                 CustomAlert.show(Alert.AlertType.ERROR, "Error", "Unknown User Type",
                         "Cannot determine dashboard for user.");
