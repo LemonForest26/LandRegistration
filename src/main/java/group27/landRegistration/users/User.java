@@ -3,11 +3,34 @@ package group27.landRegistration.users;
 import group27.landRegistration.utility.CustomAlert;
 import javafx.scene.control.Alert;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 abstract public class User implements Serializable {
     private static int idCounter = 100000000;
+
+    static {
+        try {
+            File file = new File("users.dat");
+            if (file.exists() && file.length() > 0) {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                List<User> users = (List<User>) ois.readObject();
+                ois.close();
+
+                if (!users.isEmpty()) {
+                    int lastID = users.get(users.size() - 1).getUserID();
+                    idCounter = lastID;
+                }
+            }
+        } catch (Exception ignored) {
+            // If failed → keep default 100000000
+        }
+    }
 
     protected int userID;             // each user gets his/her own ID
     protected String name, password, Email, gender;
@@ -17,6 +40,7 @@ abstract public class User implements Serializable {
 
     public User(String name, String password, String email, String gender, long NID, long phoneNumber, LocalDate doB) {
         idCounter++;
+
         this.userID = idCounter;
         this.name = name;
         this.password = password;

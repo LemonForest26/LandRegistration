@@ -5,22 +5,16 @@ import group27.landRegistration.utility.*;
 import group27.landRegistration.users.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.util.List;
 
 public class LogInViewController {
-    @javafx.fxml.FXML
-    private ComboBox UserTypeCB;
+
     @javafx.fxml.FXML
     private TextField UserIDTF;
     @javafx.fxml.FXML
     private TextField PasswordTF;
-
-    public void initialize() {
-        UserTypeCB.getItems().addAll("Auditor", "Bank Representative", "Land Owner", "Land Registrar", "Public User", "Surveyor");
-    }
 
     @javafx.fxml.FXML
     public void SignUpOA(ActionEvent actionEvent) {
@@ -35,16 +29,10 @@ public class LogInViewController {
     @javafx.fxml.FXML
     public void SignInOA(ActionEvent actionEvent) {
         try {
-            String userType = (String) UserTypeCB.getValue();
             String userID = UserIDTF.getText().trim();
             String password = PasswordTF.getText().trim();
 
             // ========== BASIC VALIDATION ==========
-            if (userType == null || userType.isEmpty()) {
-                CustomAlert.show(Alert.AlertType.ERROR, "Error", "Missing User Type", "Please select a user category.");
-                return;
-            }
-
             if (userID.isEmpty()) {
                 CustomAlert.show(Alert.AlertType.ERROR, "Error", "Missing User ID", "User ID cannot be blank.");
                 return;
@@ -69,9 +57,9 @@ public class LogInViewController {
 
             User matchedUser = null;
 
-            // ========== SEARCH FOR USER ==========
+            // ========== SEARCH FOR USER BASED ON ID ==========
             for (User u : allUsers) {
-                if (u.getUserID() == enteredID && matchRole(u, userType)) {
+                if (u.getUserID() == enteredID) {
                     matchedUser = u;
                     break;
                 }
@@ -80,7 +68,7 @@ public class LogInViewController {
             if (matchedUser == null) {
                 CustomAlert.show(Alert.AlertType.ERROR, "Invalid Login",
                         "User Not Found",
-                        "No account exists with the given ID and role.");
+                        "No account exists with the given ID.");
                 return;
             }
 
@@ -97,45 +85,36 @@ public class LogInViewController {
                     "Welcome, " + matchedUser.getName(),
                     "You have successfully logged in.");
 
-            // ========== LOAD CORRECT DASHBOARD ==========
+            // ========== LOAD DASHBOARD AUTOMATICALLY BASED ON USER CLASS ==========
             CurrentPageLoader page = new CurrentPageLoader();
+            String fxmlPath = getDashboardForUser(matchedUser);
 
-            switch (userType) {
-                case "Land Owner":
-                    page.load("/group27/landRegistration/AllDashboards/LandOwnerDashBoardView.fxml", actionEvent);
-                    break;
-                case "Land Registrar":
-                    page.load("/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml", actionEvent);
-                    break;
-                case "Surveyor":
-                    page.load("/group27/landRegistration/AllDashboards/SurveyorDashboardView.fxml", actionEvent);
-                    break;
-                case "Auditor":
-                    page.load("/group27/landRegistration/AllDashboards/AuditorDashboardView.fxml", actionEvent);
-                    break;
-                case "Public User":
-                    page.load("/group27/landRegistration/AllDashboards/PublicDashBoardView.fxml", actionEvent);
-                    break;
-                case "Bank Representative":
-                    page.load("/group27/landRegistration/AllDashboards/BankRepresentativeDashboardView.fxml", actionEvent);
-                    break;
+            if (fxmlPath != null) {
+                page.load(fxmlPath, actionEvent);
+            } else {
+                CustomAlert.show(Alert.AlertType.ERROR, "Error", "Unknown User Type",
+                        "Cannot determine dashboard for user.");
             }
 
         } catch (Exception e) {
             CustomAlert.show(Alert.AlertType.ERROR, "Exception", "Unexpected Error", e.toString());
         }
-
-    }
-    private boolean matchRole(User u, String role) {
-        switch (role) {
-            case "Land Owner": return u instanceof LandOwner;
-            case "Land Registrar": return u instanceof LandRegistrar;
-            case "Surveyor": return u instanceof Surveyor;
-            case "Auditor": return u instanceof Auditor;
-            case "Public User": return u instanceof PublicUser;
-            case "Bank Representative": return u instanceof BankRepresentative;
-            default: return false;
-        }
     }
 
+    private String getDashboardForUser(User user) {
+        if (user instanceof LandOwner)
+            return "/group27/landRegistration/AllDashboards/LandOwnerDashBoardView.fxml";
+        if (user instanceof LandRegistrar)
+            return "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml";
+        if (user instanceof Surveyor)
+            return "/group27/landRegistration/AllDashboards/SurveyorDashboardView.fxml";
+        if (user instanceof Auditor)
+            return "/group27/landRegistration/AllDashboards/AuditorDashboardView.fxml";
+        if (user instanceof PublicUser)
+            return "/group27/landRegistration/AllDashboards/PublicDashBoardView.fxml";
+        if (user instanceof BankRepresentative)
+            return "/group27/landRegistration/AllDashboards/BankRepresentativeDashboardView.fxml";
+
+        return null;
+    }
 }
