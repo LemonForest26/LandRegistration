@@ -1,11 +1,13 @@
 package group27.landRegistration.controllers.AllDashboards;
 
+import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,9 +16,18 @@ public class BankRepresentativeDashboardViewController
 {
     @javafx.fxml.FXML
     private DatePicker DateofPaymentSlipDatePicker;
+    @javafx.fxml.FXML
+    private Label UserNameLb;
+    @javafx.fxml.FXML
+    private Label UserIDLb;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    public void setUserData(User user) {
+        UserNameLb.setText(user.getName());
+        UserIDLb.setText(String.valueOf(user.getUserID()));
     }
 
     @javafx.fxml.FXML
