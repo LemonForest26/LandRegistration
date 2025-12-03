@@ -10,8 +10,6 @@ public class SubmitNewRegistrationViewController {
     @javafx.fxml.FXML
     private TextField AddressTF;
     @javafx.fxml.FXML
-    private TextField OwnerNameTF;
-    @javafx.fxml.FXML
     private TextArea DocumentsTextTA;
 
     @javafx.fxml.FXML

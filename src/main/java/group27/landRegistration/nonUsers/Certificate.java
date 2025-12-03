@@ -6,16 +6,26 @@ public class Certificate {
     private static int IDCounter = 1000;
 
     private int ownerID, certificateID, applicationID;
-    private String  certificationFilePath, ownerName;
+    private String  certificationFilePath;
     private LocalDate issueDate;
 
-    public Certificate(int ownerID, int applicationID, String certificationFilePath, String ownerName, LocalDate issueDate) {
+    public Certificate(int ownerID, int applicationID, String certificationFilePath, LocalDate issueDate) {
         this.certificateID = IDCounter++;
         this.ownerID = ownerID;
         this.applicationID = applicationID;
         this.certificationFilePath = certificationFilePath;
-        this.ownerName = ownerName;
         this.issueDate = issueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Certificate{" +
+                "ownerID=" + ownerID +
+                ", certificateID=" + certificateID +
+                ", applicationID=" + applicationID +
+                ", certificationFilePath='" + certificationFilePath + '\'' +
+                ", issueDate=" + issueDate +
+                '}';
     }
 
     public int getOwnerID() {
@@ -58,31 +68,12 @@ public class Certificate {
         Certificate.IDCounter = IDCounter;
     }
 
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
     public LocalDate getIssueDate() {
         return issueDate;
     }
 
     public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Certificate{" +
-                "ownerID=" + ownerID +
-                ", certificateID='" + certificateID + '\'' +
-                ", applicationID='" + applicationID + '\'' +
-                ", certificationFilePath='" + certificationFilePath + '\'' +
-                ", issueDate=" + issueDate +
-                '}';
     }
 
     public void generateCertificate(Application app, Plot plot) {

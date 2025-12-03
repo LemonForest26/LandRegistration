@@ -11,11 +11,11 @@ public class OfficerPerformanceViewController {
     @javafx.fxml.FXML
     private TableView PerformanceTV;
     @javafx.fxml.FXML
-    private TableColumn DateDP;
-    @javafx.fxml.FXML
     private ComboBox OfficerNameCB;
     @javafx.fxml.FXML
-    private TableColumn ActionsDP;
+    private TableColumn ActionsTC;
+    @javafx.fxml.FXML
+    private TableColumn DateTC;
 
     private void initialize() {
 
@@ -23,5 +23,9 @@ public class OfficerPerformanceViewController {
 
     @javafx.fxml.FXML
     public void FlagOfficerOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackOA(ActionEvent actionEvent) {
     }
 }

@@ -7,13 +7,11 @@ import javafx.scene.control.TextField;
 
 public class ApproveRejectApplicationViewController {
     @javafx.fxml.FXML
-    private TextField ApplicantNameTF;
-    @javafx.fxml.FXML
     private TextField PlotIDTF;
     @javafx.fxml.FXML
-    private Label ApplicationIDLb;
-    @javafx.fxml.FXML
     private TextArea RemarksTF;
+    @javafx.fxml.FXML
+    private TextField ApplicantIDTF;
 
     @javafx.fxml.FXML
     public void RejectOA(ActionEvent actionEvent) {

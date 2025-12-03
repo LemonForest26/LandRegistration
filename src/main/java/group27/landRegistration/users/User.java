@@ -141,7 +141,7 @@ abstract public class User {
             if(doB !=null /* && something */) setDoB(doB);
         }
         else {
-            CustomAlert alert = new CustomAlert(ERROR, "Error Alert!", "Wrong Password!", "Your confirm password must match with your given password.");
+            CustomAlert.show(Alert.AlertType.ERROR, "Error Alert!", "Wrong Password!", "Your confirm password must match with your given password.");
 
         }
     }
