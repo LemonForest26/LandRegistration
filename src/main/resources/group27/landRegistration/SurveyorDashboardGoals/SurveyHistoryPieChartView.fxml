@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="599.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.SurveyorHistoryPieChartViewController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="727.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surveyor History Summary" textAlignment="CENTER" wrappingWidth="724.8818969726562">
+               <font>
+                  <Font name="System Bold Italic" size="41.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <PieChart fx:id="SurveyorHistoryPiechart" layoutX="62.0" layoutY="100.0" prefHeight="376.0" prefWidth="600.0" style="-fx-border-color: blue;" styleClass="b" />
+      <HBox layoutY="492.0" prefHeight="108.0" prefWidth="727.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#SurveyorHistoryViewpieChartOnAction" text="Surveyor History View Pie Chart" />
+            <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#BacktoHomeOnAction" text="Back To Home " />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
