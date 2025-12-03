@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="599.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.SurveyorHistoryPieChartViewController">
+<AnchorPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.SurveyorHistoryPieChartViewController">
    <children>
       <HBox prefHeight="100.0" prefWidth="727.0">
          <children>

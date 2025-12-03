@@ -27,7 +27,7 @@ public class UpdateZoningViewController {
     public void BackOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/AuditorDashboardView.fxml", actionEvent);
+            page.load("/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml", actionEvent);
         } catch (Exception e) {
             e.printStackTrace();
         }

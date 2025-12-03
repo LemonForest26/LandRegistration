@@ -99,4 +99,14 @@ public class AuditorDashboardViewController {
     @javafx.fxml.FXML
     public void EditProfileOA(ActionEvent actionEvent) {
     }
+
+    public void EditProfileOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/AuditorGoals/EditProfileView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

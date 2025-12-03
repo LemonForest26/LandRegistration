@@ -117,7 +117,7 @@ public class LogInViewController {
         if (user instanceof Auditor)
             return "/group27/landRegistration/AllDashboards/AuditorDashboardView.fxml";
         if (user instanceof PublicUser)
-            return "/group27/landRegistration/AllDashboards/PublicDashBoardView.fxml";
+            return "/group27/landRegistration/AllDashboards/PublicUserDashBoardView.fxml";
         if (user instanceof BankRepresentative)
             return "/group27/landRegistration/AllDashboards/BankRepresentativeDashboardView.fxml";
 

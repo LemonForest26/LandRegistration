@@ -18,26 +18,62 @@ public class LandOwnerDashBoardViewController {
 
     @javafx.fxml.FXML
     public void NewRegistrationRequestOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/SubmitNewRegistrationRequestView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void MutationRequestOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/RequestCorrectionMutationView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void CertificatesOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/DownloadCertificateView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void MyLandRecordsOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/ViewMyLandRecordsView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void PayTaxesOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/PayTaxView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void TrackApplicationOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/TrackApplicationView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
@@ -52,9 +88,21 @@ public class LandOwnerDashBoardViewController {
 
     @javafx.fxml.FXML
     public void FeedbackOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/SubmitFeedbackView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @javafx.fxml.FXML
     public void EditProfileOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.load("/group27/landRegistration/LandOwnerGoals/EditProfileView.fxml", actionEvent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="502.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ReconcileTransactionViewController">
+<AnchorPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.BankRepresentativeGoals.ReconcileTransactionViewController">
    <children>
       <Label layoutX="184.0" layoutY="39.0" text="Reconciliation">
          <font>

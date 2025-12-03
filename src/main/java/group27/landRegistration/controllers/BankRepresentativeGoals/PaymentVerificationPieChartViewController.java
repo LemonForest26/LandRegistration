@@ -12,7 +12,7 @@ public class PaymentVerificationPieChartViewController {
     public void BackOnAction(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/AuditorDashboardView.fxml", actionEvent);
+            page.load("/group27/landRegistration/AllDashboards/BankRepresentativeDashboardView.fxml", actionEvent);
         } catch (Exception e) {
             e.printStackTrace();
         }

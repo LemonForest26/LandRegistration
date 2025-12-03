@@ -7,8 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="477.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.UpdateSurveyRecordViewController">
+<AnchorPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.SurveyorDashboardGoals.UpdateSurveyRecordViewController">
    <children>
       <Text layoutX="179.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Survey Record Editor">
          <font>
@@ -18,5 +17,6 @@
       <TextField fx:id="SurveyIDTextField" layoutX="226.0" layoutY="105.0" promptText="Survey ID" />
       <TextArea fx:id="NotesTextArea" layoutX="200.0" layoutY="152.0" prefHeight="200.0" prefWidth="200.0" promptText="Notes" wrapText="true" />
       <Button layoutX="253.0" layoutY="382.0" mnemonicParsing="false" onAction="#UpdateRecordOA" text="Update Record" />
+      <Button layoutX="521.0" layoutY="424.0" mnemonicParsing="false" onAction="#BackOnAction" text="Back" />
    </children>
 </AnchorPane>
