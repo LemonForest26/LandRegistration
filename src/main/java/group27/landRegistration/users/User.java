@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 abstract public class User implements Serializable {
-    private static int idCounter = 100000000;
+    private static int idCounter = 1000;
 
     static {
         try {
@@ -28,7 +28,7 @@ abstract public class User implements Serializable {
                 }
             }
         } catch (Exception ignored) {
-            // If failed → keep default 100000000
+            // If failed → keep default 1000
         }
     }
 
