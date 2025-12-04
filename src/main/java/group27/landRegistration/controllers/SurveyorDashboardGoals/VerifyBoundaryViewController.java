@@ -30,7 +30,7 @@ public class VerifyBoundaryViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/landRegistration/AuditorGoals/AuditorDashboardView.fxml",
+                    "/group27/landRegistration/AllDashboards/SurveyorDashboardView.fxml",
                     actionEvent,
                     controller -> {
                         try {

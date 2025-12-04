@@ -42,15 +42,14 @@ public class FinaliseTransferViewController {
             long newOwnerID = Long.parseLong(NewOwnerIDTF.getText());
 
             loggedInUser.finiliseTransfer(plotID, oldOwnerID, newOwnerID);
-        }
-        catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             // If parsing fails, show an error
             CustomAlert.show(Alert.AlertType.ERROR,
                     "Invalid Input",
                     "Invalid Number Format",
                     "Please enter valid numeric values for Plot ID and Owner IDs.");
+        }
     }
-
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
         try {

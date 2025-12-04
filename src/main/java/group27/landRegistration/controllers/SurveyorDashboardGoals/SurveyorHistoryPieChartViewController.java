@@ -28,7 +28,7 @@ public class SurveyorHistoryPieChartViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/landRegistration/AuditorGoals/SurveyorDashboardView.fxml",
+                    "/group27/landRegistration/AllDashboards/SurveyorDashboardView.fxml",
                     actionEvent,
                     controller -> {
                         try {
