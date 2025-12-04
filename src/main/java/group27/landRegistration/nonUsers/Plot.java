@@ -3,17 +3,26 @@ package group27.landRegistration.nonUsers;
 import java.util.ArrayList;
 
 public class Plot {
-    private int ownerID;
+    private int plotID, ownerID;
     private String location, zoning;
     private double area;
     private ArrayList<Mutation> mutations;
     private ArrayList<Application> applications;
 
-    public Plot(int ownerID, String location, String zoning, double area) {
+    public Plot(int plotID, int ownerID, String location, String zoning, double area) {
+        this.plotID = plotID;
         this.ownerID = ownerID;
         this.location = location;
         this.zoning = zoning;
         this.area = area;
+    }
+
+    public int getPlotID() {
+        return plotID;
+    }
+
+    public void setPlotID(int plotID) {
+        this.plotID = plotID;
     }
 
     public int getOwnerID() {

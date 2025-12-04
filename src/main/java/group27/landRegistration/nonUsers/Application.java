@@ -1,15 +1,16 @@
 package group27.landRegistration.nonUsers;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Application {
+public class Application implements Serializable {
     private static int IDCounter = 1000;
 
     private int applicationID, plotID, applicantID;
     private String status, notes;
     private LocalDate dateSubmitted, dateUpdated;
-    private ArrayList<String> attachments;
+    private ArrayList<String> attachments = new ArrayList<>();
 
     public Application(int plotID, int applicantID, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
         this.applicationID = IDCounter++;
@@ -23,6 +24,10 @@ public class Application {
 
     public int getApplicationID() {
         return applicationID;
+    }
+
+    public ArrayList<String> getAttachments() {
+        return attachments;
     }
 
     public void setApplicationID(int applicationID) {
