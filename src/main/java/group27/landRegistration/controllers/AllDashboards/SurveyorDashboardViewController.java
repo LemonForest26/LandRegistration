@@ -28,7 +28,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/DisputeEvidence.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/DisputeEvidenceView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -55,27 +55,6 @@ public class SurveyorDashboardViewController {
         }
     }
 
-    @javafx.fxml.FXML
-    public void GenerateMapOnAction(ActionEvent actionEvent) {
-        try {
-            CurrentPageLoader page = new CurrentPageLoader();
-            page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/GenerateMap.fxml",
-                    actionEvent,
-                    controller -> {
-                        try {
-                            controller.getClass()
-                                    .getMethod("setUserData", User.class)
-                                    .invoke(controller, loggedInUser);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-            );
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
     @javafx.fxml.FXML
     public void UpdateSurveyrecordOnAction(ActionEvent actionEvent) {
@@ -105,7 +84,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/ViewSurveyLogs.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/DisputeEvidenceView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -211,5 +190,9 @@ public class SurveyorDashboardViewController {
             e.printStackTrace();
         }
 
+    }
+
+    @javafx.fxml.FXML
+    public void PieChartOnAction(ActionEvent actionEvent) {
     }
 }
