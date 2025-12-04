@@ -53,7 +53,8 @@ public class OfficerPerformanceViewController {
                             e.printStackTrace();
                         }
                     }
-            );        } catch (Exception e) {
+            );
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

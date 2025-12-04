@@ -54,7 +54,19 @@ public class LandRegistrarDashBoardViewController {
     public void GenerateCertificateOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/GenerateCertificateView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/GenerateCertificateView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,7 +76,19 @@ public class LandRegistrarDashBoardViewController {
     public void ZoningUpdateOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/UpdateZoningView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/UpdateZoningView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,7 +99,19 @@ public class LandRegistrarDashBoardViewController {
     public void ApproveRejectOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/ApproveRejectApplicationView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/ApproveRejectApplicationView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -85,7 +121,19 @@ public class LandRegistrarDashBoardViewController {
     public void ReviewPendingApplicationsOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/ReviewPendingApplicationView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/ReviewPendingApplicationView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -105,7 +153,19 @@ public class LandRegistrarDashBoardViewController {
     public void DisputesOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/QuickDisputeFlagView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/QuickDisputeFlagView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -114,8 +174,19 @@ public class LandRegistrarDashBoardViewController {
     @javafx.fxml.FXML
     public void TransferOwnershipOA(ActionEvent actionEvent) {
         try {
-            CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/FinaliseTransferView.fxml", actionEvent);
+            CurrentPageLoader page = new CurrentPageLoader();page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/FinaliseTransferView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -125,7 +196,19 @@ public class LandRegistrarDashBoardViewController {
     public void EditProfileOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/EditProfileView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/EditProfileView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
