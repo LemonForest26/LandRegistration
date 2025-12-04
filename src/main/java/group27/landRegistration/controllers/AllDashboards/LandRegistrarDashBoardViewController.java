@@ -12,23 +12,42 @@ public class LandRegistrarDashBoardViewController {
     @javafx.fxml.FXML
     private Label UserIDLb;
 
-    // <-- Use User, not LandRegistrar
+    private User loggedInUser;
+
     public void setUserData(User user) {
+        this.loggedInUser = user; // store user for reuse
         UserNameLb.setText(user.getName());
         UserIDLb.setText(String.valueOf(user.getUserID()));
     }
 
-
+    public User getLoggedInUser(){
+        return loggedInUser;
+    }
 
     @javafx.fxml.FXML
     public void OfficerPerformanceOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/LandRegistrarGoals/OfficerPerformanceView.fxml", actionEvent);
-        } catch (Exception e) {
+
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/OfficerPerformanceView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     @javafx.fxml.FXML
     public void GenerateCertificateOA(ActionEvent actionEvent) {
