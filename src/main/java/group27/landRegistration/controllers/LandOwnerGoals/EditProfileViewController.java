@@ -1,5 +1,6 @@
 package group27.landRegistration.controllers.LandOwnerGoals;
 
+import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
@@ -7,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class EditProfileViewController {
+    private User loggedInUser;
     @javafx.fxml.FXML
     private TextField AddressTF;
     @javafx.fxml.FXML
@@ -22,6 +24,14 @@ public class EditProfileViewController {
     @javafx.fxml.FXML
     private PasswordField ConfirmPasswordTF;
 
+    public void setUserData(User user) {
+        this.loggedInUser = user; // store user for reuse
+    }
+
+    public User getLoggedInUser(){
+        return loggedInUser;
+    }
+
     @javafx.fxml.FXML
     public void SaveProfileOA(ActionEvent actionEvent) {
     }
@@ -34,8 +44,22 @@ public class EditProfileViewController {
     public void BackOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AllDashboards/LandOwnerDashBoardView.fxml", actionEvent);
-        } catch (Exception e) {
+
+            page.loadWithData(
+                    "/group27/landRegistration/AllDashboards/LandOwnerDashBoardView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
