@@ -1,16 +1,40 @@
 package group27.landRegistration.nonUsers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
-public class Certificate {
+public class Certificate implements Serializable {
     private static int IDCounter = 1000;
+    static {
+        try {
+            File file = new File("Certificate.dat");
+            if (file.exists() && file.length() > 0) {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                List<Certificate> certs = (List<Certificate>) ois.readObject();
+                ois.close();
+
+                if (!certs.isEmpty()) {
+                    int lastID = certs.get(certs.size() - 1).getCertificateID();
+                    IDCounter = lastID;
+                }
+            }
+        } catch (Exception ignored) {
+            // If failed → keep default 1000
+        }
+    }
 
     private int ownerID, certificateID, applicationID;
     private String  certificationFilePath;
     private LocalDate issueDate;
 
     public Certificate(int ownerID, int applicationID, String certificationFilePath, LocalDate issueDate) {
-        this.certificateID = IDCounter++;
+        IDCounter++;
+        this.certificateID = IDCounter;
         this.ownerID = ownerID;
         this.applicationID = applicationID;
         this.certificationFilePath = certificationFilePath;

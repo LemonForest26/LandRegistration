@@ -61,7 +61,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/UpdateSurveyrecord.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/UpdateSurveyRecordView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -106,7 +106,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/StartNewSurvey.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/StartNewSurveyView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -128,7 +128,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/InspectionRequests.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/InspectionRequestView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -151,7 +151,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/VerifyBoundary.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/VerifyBoundaryView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -174,7 +174,7 @@ public class SurveyorDashboardViewController {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
             page.loadWithData(
-                    "/group27/LandRegistration/SurveyorDashboardGoals/QuickMeasurement.fxml",
+                    "/group27/landRegistration/SurveyorDashboardGoals/QuickMeasurementView.fxml",
                     actionEvent,
                     controller -> {
                         try {
@@ -194,5 +194,23 @@ public class SurveyorDashboardViewController {
 
     @javafx.fxml.FXML
     public void PieChartOnAction(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.loadWithData(
+                    "/group27/landRegistration/SurveyorDashboardGoals/SurveyHistoryPieChartView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

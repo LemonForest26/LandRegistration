@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandRegistrarGoals.GenerateCertificateViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandRegistrarGoals.GenerateCertificateViewController">
    <top>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,16 +25,16 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="293.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner ID:" />
-            <TextField fx:id="OwnerIDTF" layoutX="293.0" layoutY="45.0" prefHeight="26.0" prefWidth="244.0" />
-            <Text layoutX="295.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plot ID:" />
-            <TextField fx:id="PlotIDTF" layoutX="293.0" layoutY="88.0" prefHeight="26.0" prefWidth="244.0" />
-            <DatePicker fx:id="IssueDateDP" layoutX="293.0" layoutY="176.0" prefHeight="26.0" prefWidth="247.0" promptText="Issue Date" />
-            <Button layoutX="293.0" layoutY="344.0" mnemonicParsing="false" onAction="#GeneratepdfOA" prefHeight="26.0" prefWidth="248.0" text="Generate PDF" />
+            <Text layoutX="355.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner ID:" />
+            <TextField fx:id="OwnerIDTF" layoutX="355.0" layoutY="104.0" prefHeight="26.0" prefWidth="244.0" />
+            <Text layoutX="357.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plot ID:" />
+            <TextField fx:id="PlotIDTF" layoutX="355.0" layoutY="147.0" prefHeight="26.0" prefWidth="244.0" />
+            <DatePicker fx:id="IssueDateDP" layoutX="355.0" layoutY="235.0" prefHeight="26.0" prefWidth="247.0" promptText="Issue Date" />
+            <Button layoutX="355.0" layoutY="403.0" mnemonicParsing="false" onAction="#GeneratepdfOA" prefHeight="26.0" prefWidth="248.0" text="Generate PDF" />
             <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="110.0" text="Back" />
-            <Text layoutX="297.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application ID:" />
-            <TextField fx:id="ApplicationIDTF" layoutX="295.0" layoutY="131.0" prefHeight="26.0" prefWidth="244.0" />
-            <TextArea fx:id="CertificateFilePathTA" layoutX="293.0" layoutY="224.0" prefHeight="102.0" prefWidth="247.0" promptText="Certificate File Path" />
+            <Text layoutX="359.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application ID:" />
+            <TextField fx:id="ApplicationIDTF" layoutX="357.0" layoutY="190.0" prefHeight="26.0" prefWidth="244.0" />
+            <TextArea fx:id="CertificateFilePathTA" layoutX="355.0" layoutY="283.0" prefHeight="102.0" prefWidth="247.0" promptText="Certificate File Path" />
          </children>
       </AnchorPane>
    </center>

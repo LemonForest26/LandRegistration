@@ -1,17 +1,41 @@
 package group27.landRegistration.nonUsers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Mutation {
-    private static int IDCounter = 100000;
+public class Mutation implements Serializable {
+    private static int IDCounter = 1000;
+    static {
+        try {
+            File file = new File("Mutation.dat");
+            if (file.exists() && file.length() > 0) {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                List<Mutation> muts = (List<Mutation>) ois.readObject();
+                ois.close();
+
+                if (!muts.isEmpty()) {
+                    int lastID = muts.get(muts.size() - 1).getMutationID();
+                    IDCounter = lastID;
+                }
+            }
+        } catch (Exception ignored) {
+            // If failed → keep default 1000
+        }
+    }
 
     private int mutationID, plotID, oldOwnerID, newOwnerID;
     private String status, remarks;
     private LocalDate requestDate, approvalDate;
 
     public Mutation(int plotID, int oldOwnerID, int newOwnerID, String status, String remarks, LocalDate requestDate, LocalDate approvalDate) {
-        this.mutationID = IDCounter++;
+        IDCounter++;
+        this.mutationID = IDCounter;
         this.plotID = plotID;
         this.oldOwnerID = oldOwnerID;
         this.newOwnerID = newOwnerID;

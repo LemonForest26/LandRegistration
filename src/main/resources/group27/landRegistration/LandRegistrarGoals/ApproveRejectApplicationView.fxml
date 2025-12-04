@@ -24,18 +24,18 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane layoutX="262.0" layoutY="39.0" prefHeight="262.0" prefWidth="277.0" style="-fx-background-color: white;">
+            <AnchorPane layoutX="341.0" layoutY="80.0" prefHeight="262.0" prefWidth="277.0" style="-fx-background-color: white;">
                <children>
                   <Text layoutX="19.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Application ID" />
-                  <TextField fx:id="ApplicantIDTF" layoutX="20.0" layoutY="43.0" prefHeight="26.0" prefWidth="232.0" />
+                  <TextField fx:id="ApplicationIDTF" layoutX="20.0" layoutY="43.0" prefHeight="26.0" prefWidth="232.0" />
                   <Text layoutX="19.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plot ID:" />
                   <TextField fx:id="PlotIDTF" layoutX="20.0" layoutY="103.0" prefHeight="26.0" prefWidth="232.0" />
                   <Text layoutX="20.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:" />
                   <TextArea fx:id="RemarksTF" layoutX="17.0" layoutY="146.0" prefHeight="106.0" prefWidth="236.0" />
                </children>
             </AnchorPane>
-            <Button layoutX="262.0" layoutY="329.0" mnemonicParsing="false" onAction="#ApproveOA" prefHeight="26.0" prefWidth="106.0" text="Approve" />
-            <Button layoutX="433.0" layoutY="329.0" mnemonicParsing="false" onAction="#RejectOA" prefHeight="26.0" prefWidth="106.0" text="Reject" />
+            <Button layoutX="341.0" layoutY="370.0" mnemonicParsing="false" onAction="#ApproveOA" prefHeight="26.0" prefWidth="106.0" text="Approve" />
+            <Button layoutX="512.0" layoutY="370.0" mnemonicParsing="false" onAction="#RejectOA" prefHeight="26.0" prefWidth="106.0" text="Reject" />
             <Button layoutX="14.0" layoutY="1.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="85.0" text="Back" />
          </children>
       </AnchorPane>

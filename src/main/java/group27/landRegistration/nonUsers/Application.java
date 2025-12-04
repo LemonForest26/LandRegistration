@@ -1,11 +1,34 @@
 package group27.landRegistration.nonUsers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Application implements Serializable {
     private static int IDCounter = 1000;
+
+    static {
+        try {
+            File file = new File("Application.dat");
+            if (file.exists() && file.length() > 0) {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                List<Application> apps = (List<Application>) ois.readObject();
+                ois.close();
+
+                if (!apps.isEmpty()) {
+                    int lastID = apps.get(apps.size() - 1).getApplicationID();
+                    IDCounter = lastID;
+                }
+            }
+        } catch (Exception ignored) {
+            // If failed → keep default 1000
+        }
+    }
 
     private int applicationID, plotID, applicantID;
     private String status, notes;
@@ -13,7 +36,8 @@ public class Application implements Serializable {
     private ArrayList<String> attachments = new ArrayList<>();
 
     public Application(int plotID, int applicantID, String status, String notes, LocalDate dateSubmitted, LocalDate dateUpdated) {
-        this.applicationID = IDCounter++;
+        IDCounter++;
+        this.applicationID = IDCounter;
         this.plotID = plotID;
         this.applicantID = applicantID;
         this.status = status;
@@ -96,17 +120,23 @@ public class Application implements Serializable {
                 '}';
     }
 
-    public void updateStatus(String newStatus){
 
-    }
-    public void addNote(String note){
-
-    }
     public void addAttachment(String file){
 
     }
-    public boolean isCompleted(){
-       return false; //change later
+    public void updateStatus(String newStatus) {
+        this.status = newStatus;
+        this.dateUpdated = LocalDate.now();
     }
+
+    public void addNote(String note) {
+        if (this.notes == null) this.notes = "";
+        this.notes += "\n" + note;
+    }
+
+    public boolean isCompleted() {
+        return "Approved".equalsIgnoreCase(status) || "Rejected".equalsIgnoreCase(status);
+    }
+
 }
 

@@ -24,14 +24,14 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="FeeTV" layoutX="146.0" layoutY="105.0" prefHeight="161.0" prefWidth="417.0">
+            <TableView fx:id="FeeTV" layoutX="225.0" layoutY="117.0" prefHeight="231.0" prefWidth="509.0">
               <columns>
-                <TableColumn fx:id="RegistrationFeeCol" prefWidth="127.0" text="Registration Fee" />
-                <TableColumn fx:id="MutationFeeCol" prefWidth="178.0" text="Mutation Fee" />
-                  <TableColumn fx:id="TaxRateCol" prefWidth="111.0" text="Tax Rate" />
+                <TableColumn fx:id="RegistrationFeeCol" prefWidth="138.0" text="Registration Fee" />
+                <TableColumn fx:id="MutationFeeCol" prefWidth="215.0" text="Mutation Fee" />
+                  <TableColumn fx:id="TaxRateCol" prefWidth="155.0" text="Tax Rate" />
               </columns>
             </TableView>
-            <Button layoutX="597.0" layoutY="411.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="61.0" text="Back" />
+            <Button layoutX="859.0" layoutY="534.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="25.0" prefWidth="61.0" text="Back" />
          </children>
       </AnchorPane>
    </center>
