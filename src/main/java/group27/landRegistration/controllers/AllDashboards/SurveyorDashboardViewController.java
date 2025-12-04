@@ -2,8 +2,14 @@ package group27.landRegistration.controllers.AllDashboards;
 
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 
 public class SurveyorDashboardViewController {
+    @javafx.fxml.FXML
+    private Label UserNameLb;
+    @javafx.fxml.FXML
+    private Label UserIDLb;
+
     @javafx.fxml.FXML
     public void DisputeEvidenceOnAction(ActionEvent actionEvent) {
         try {

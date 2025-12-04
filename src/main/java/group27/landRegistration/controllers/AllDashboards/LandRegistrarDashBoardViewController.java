@@ -11,9 +11,9 @@ public class LandRegistrarDashBoardViewController {
 
     private User loggedInUser;
     @javafx.fxml.FXML
-    private Text UserNameLb;
+    private Label UserNameLb;
     @javafx.fxml.FXML
-    private Text UserIDLb;
+    private Label UserIDLb;
 
     public void setUserData(User user) {
         this.loggedInUser = user; // store user for reuse

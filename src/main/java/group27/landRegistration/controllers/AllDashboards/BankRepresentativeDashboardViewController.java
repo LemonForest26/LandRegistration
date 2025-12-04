@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +15,10 @@ public class BankRepresentativeDashboardViewController
 {
     @javafx.fxml.FXML
     private DatePicker DateofPaymentSlipDatePicker;
+    @javafx.fxml.FXML
+    private Label UserNameLb;
+    @javafx.fxml.FXML
+    private Label UserIDLb;
 
     @javafx.fxml.FXML
     public void initialize() {

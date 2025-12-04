@@ -58,8 +58,10 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Text fx:id="UserNameLb" layoutX="40.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="231.18207550048828" />
-            <Text fx:id="UserIDLb" layoutX="40.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="232.53675079345703" />
+            <Text layoutX="40.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="43.18212890625" />
+            <Text layoutX="40.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="19.73675537109375" />
+            <Label fx:id="UserNameLb" layoutX="83.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
+            <Label fx:id="UserIDLb" layoutX="60.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
          </children>
       </AnchorPane>
    </center>
