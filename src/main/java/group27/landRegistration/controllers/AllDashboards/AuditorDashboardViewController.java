@@ -11,16 +11,35 @@ public class AuditorDashboardViewController {
     @javafx.fxml.FXML
     private Label UserIDLb;
 
+    private User loggedInUser;
+
     public void setUserData(User user) {
+        this.loggedInUser = user; // store user for reuse
         UserNameLb.setText(user.getName());
         UserIDLb.setText(String.valueOf(user.getUserID()));
+    }
+
+    public User getLoggedInUser(){
+        return loggedInUser;
     }
 
     @javafx.fxml.FXML
     public void ValuationCheckOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/ValuationCheckView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/ValuationCheckView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -30,7 +49,19 @@ public class AuditorDashboardViewController {
     public void UserPermissionOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/ReviewUserPermissionsView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/ReviewUserPermissionsView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,7 +71,19 @@ public class AuditorDashboardViewController {
     public void MonthlyReportLockOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/LockMonthlyReportView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/LockMonthlyReportView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,7 +93,19 @@ public class AuditorDashboardViewController {
     public void ApprovalSamplingOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/ApprovalSamplingView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/ApprovalSamplingView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +115,19 @@ public class AuditorDashboardViewController {
     public void ActivityLogOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/ActivityLogView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/ActivityLogView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,7 +147,19 @@ public class AuditorDashboardViewController {
     public void IntegritySummaryOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/AnnualIntegritySummaryView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/AnnualIntegritySummaryView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -90,7 +169,19 @@ public class AuditorDashboardViewController {
     public void GenerateAuditReportOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/GenerateAuditReportView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/GenerateAuditReportView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,7 +192,19 @@ public class AuditorDashboardViewController {
     public void EditProfileOA(ActionEvent actionEvent) {
         try {
             CurrentPageLoader page = new CurrentPageLoader();
-            page.load("/group27/landRegistration/AuditorGoals/EditProfileView.fxml", actionEvent);
+            page.loadWithData(
+                    "/group27/landRegistration/AuditorGoals/EditProfileView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
