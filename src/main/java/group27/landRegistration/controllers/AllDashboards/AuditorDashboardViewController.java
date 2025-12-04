@@ -97,8 +97,6 @@ public class AuditorDashboardViewController {
     }
 
     @javafx.fxml.FXML
-    public void EditProfileOA(ActionEvent actionEvent) {
-    }
 
     public void EditProfileOA(ActionEvent actionEvent) {
         try {

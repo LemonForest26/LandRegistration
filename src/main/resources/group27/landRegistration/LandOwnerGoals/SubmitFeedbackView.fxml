@@ -19,9 +19,9 @@
    <center>
       <AnchorPane prefHeight="470.0" prefWidth="736.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="SubjectTF" layoutX="210.0" layoutY="41.0" prefHeight="26.0" prefWidth="328.0" promptText="Subject" />
-            <TextArea fx:id="MessageTA" layoutX="212.0" layoutY="88.0" prefHeight="200.0" prefWidth="327.0" promptText="Message" />
-            <Button layoutX="323.0" layoutY="319.0" mnemonicParsing="false" onAction="#SubmitFeedbackOA" prefHeight="36.0" prefWidth="117.0" text="Submit Feedback" />
+            <TextField fx:id="SubjectTF" layoutX="315.0" layoutY="41.0" prefHeight="26.0" prefWidth="328.0" promptText="Subject" />
+            <TextArea fx:id="MessageTA" layoutX="317.0" layoutY="88.0" prefHeight="200.0" prefWidth="327.0" promptText="Message" />
+            <Button layoutX="428.0" layoutY="319.0" mnemonicParsing="false" onAction="#SubmitFeedbackOA" prefHeight="36.0" prefWidth="117.0" text="Submit Feedback" />
             <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#BackOA" text="Back" />
          </children>
       </AnchorPane>
