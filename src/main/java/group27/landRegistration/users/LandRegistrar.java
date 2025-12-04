@@ -10,4 +10,8 @@ public class LandRegistrar extends User{
     public void reviewPendingApplilcation() {
 
     }
+
+    public void finiliseTransfer(int plotID, long oldOwnerID, long newOwnerID) {
+        //OwnerShip Transfer...
+    }
 }
