@@ -24,9 +24,6 @@ public class LandRegistrarDashBoardViewController {
         return loggedInUser;
     }
 
-
-
-
     @javafx.fxml.FXML
     public void OfficerPerformanceOA(ActionEvent actionEvent) {
         try {
