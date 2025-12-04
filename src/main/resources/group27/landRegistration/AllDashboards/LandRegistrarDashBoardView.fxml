@@ -7,8 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AllDashboards.LandRegistrarDashBoardViewController">
+<BorderPane prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AllDashboards.LandRegistrarDashBoardViewController">
    <left>
       <VBox prefHeight="590.0" prefWidth="226.0" style="-fx-background-color: #edebeb;" BorderPane.alignment="CENTER">
          <children>
@@ -57,6 +58,8 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Text fx:id="UserNameLb" layoutX="40.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="231.18207550048828" />
+            <Text fx:id="UserIDLb" layoutX="40.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="232.53675079345703" />
          </children>
       </AnchorPane>
    </center>

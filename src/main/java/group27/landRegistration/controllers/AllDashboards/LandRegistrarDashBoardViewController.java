@@ -5,14 +5,15 @@ import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 public class LandRegistrarDashBoardViewController {
-    @javafx.fxml.FXML
-    private Label UserNameLb;
-    @javafx.fxml.FXML
-    private Label UserIDLb;
 
     private User loggedInUser;
+    @javafx.fxml.FXML
+    private Text UserNameLb;
+    @javafx.fxml.FXML
+    private Text UserIDLb;
 
     public void setUserData(User user) {
         this.loggedInUser = user; // store user for reuse
