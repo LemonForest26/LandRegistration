@@ -26,6 +26,7 @@ public class CurrentPageLoader {
         }
     }
 
+
     public <T> void loadWithData(String viewPath, ActionEvent event, ControllerConsumer<T> consumer) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(viewPath));
