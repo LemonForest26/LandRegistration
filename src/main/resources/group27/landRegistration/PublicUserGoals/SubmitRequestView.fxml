@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.SubmitRequestViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.PublicUserGoals.SubmitRequestViewController">
    <top>
       <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -25,11 +25,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="NameTF" layoutX="170.0" layoutY="126.0" promptText="Name" />
-            <ComboBox fx:id="RequestTypeCB" layoutX="169.0" layoutY="187.0" prefWidth="150.0" promptText="Request Type" />
-            <TextArea fx:id="MessageTA" layoutX="347.0" layoutY="104.0" prefHeight="200.0" prefWidth="200.0" promptText="Message" />
-            <Button layoutX="167.0" layoutY="248.0" mnemonicParsing="false" onAction="#SubmitRequestOA" prefHeight="25.0" prefWidth="153.0" text="Submit Request" />
-            <Button layoutX="616.0" layoutY="444.0" mnemonicParsing="false" onAction="#BackOA" text="Home" />
+            <TextField fx:id="NameTF" layoutX="292.0" layoutY="146.0" promptText="Name" />
+            <ComboBox fx:id="RequestTypeCB" layoutX="291.0" layoutY="207.0" prefWidth="150.0" promptText="Request Type" />
+            <TextArea fx:id="MessageTA" layoutX="469.0" layoutY="124.0" prefHeight="200.0" prefWidth="200.0" promptText="Message" />
+            <Button layoutX="289.0" layoutY="268.0" mnemonicParsing="false" onAction="#SubmitRequestOA" prefHeight="25.0" prefWidth="153.0" text="Submit Request" />
+            <Button layoutX="874.0" layoutY="544.0" mnemonicParsing="false" onAction="#BackOA" text="Home" />
          </children>
       </AnchorPane>
    </center>

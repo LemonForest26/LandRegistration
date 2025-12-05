@@ -56,8 +56,6 @@ public class FinaliseTransferViewController {
 
     @FXML
     public void BackOA(ActionEvent actionEvent) {
-        // FIXED: Using direct casting instead of Reflection
-        // This ensures the method is found and type safety is maintained.
         new CurrentPageLoader().loadWithData(
                 "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml",
                 actionEvent,

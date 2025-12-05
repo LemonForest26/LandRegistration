@@ -1,7 +1,9 @@
 package group27.landRegistration.controllers.LandRegistrarGoals;
 
+import group27.landRegistration.controllers.AllDashboards.LandRegistrarDashBoardViewController;
 import group27.landRegistration.nonUsers.Application;
 import group27.landRegistration.nonUsers.Plot;
+import group27.landRegistration.users.LandRegistrar;
 import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CustomAlert;
 import group27.landRegistration.utility.CurrentPageLoader;
@@ -21,84 +23,124 @@ public class ApproveRejectApplicationViewController {
     @javafx.fxml.FXML
     private TextArea RemarksTF;
 
-    private User loggedInUser;
+    private LandRegistrar landReg;
     @javafx.fxml.FXML
     private TextField ApplicationIDTF;
 
     public void setUserData(User user) {
-        this.loggedInUser = user;
+        if (user instanceof LandRegistrar) {
+            this.landReg = (LandRegistrar) user;
+        }
     }
 
-    public User getLoggedInUser() {
-        return loggedInUser;
+    public User getLoggedInUser(){
+        return landReg;
     }
 
     // ---------------------- REJECT ----------------------
     @javafx.fxml.FXML
     public void RejectOA(ActionEvent actionEvent) {
+        try {
+            Integer plotID = parseIntSafe(PlotIDTF.getText());
+            Integer applicationID = parseIntSafe(ApplicationIDTF.getText());
+            String remarks = RemarksTF.getText().trim();
 
-        Integer plotID = parseIntSafe(PlotIDTF.getText());
-        Integer applicationID = parseIntSafe(ApplicationIDTF.getText());
-        String remarks = RemarksTF.getText().trim();
 
-        if (plotID == null || applicationID == null || remarks.isEmpty()) {
-            CustomAlert.show(Alert.AlertType.ERROR, "Invalid Input",
-                    "All fields required", "Plot ID, Applicant ID, and Remarks are required.");
-            return;
+            if (plotID == null || applicationID == null || remarks.isEmpty()) {
+                CustomAlert.show(Alert.AlertType.ERROR, "Invalid Input",
+                        "All fields required", "Plot ID, Applicant ID, and Remarks are required.");
+                return;
+            }
+
+            // Find Application
+            Application app = findApplication(plotID, applicationID);
+            if (app == null) {
+                CustomAlert.show(Alert.AlertType.ERROR, "Not Found",
+                        "Application Not Found", "No matching application.");
+                return;
+            }
+
+            // Update status
+            app.updateStatus("Rejected");
+            app.addNote("Registrar Remarks: " + remarks);
+
+            saveUpdatedApplication(app);
+
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Application Rejected",
+                    "Status Updated", "Application ID: " + app.getApplicationID());
+
+            BackOA(actionEvent);
+        }
+        catch(NumberFormatException e) {
+            CustomAlert.show(
+                    Alert.AlertType.ERROR,
+                    "Invalid Input",
+                    "Number Format Error",
+                    "Please enter valid numeric values for Plot ID and Application ID."
+            );
+        }
+        catch (Exception e) {
+            CustomAlert.show(
+                    Alert.AlertType.ERROR,
+                    "Unexpected Error",
+                    "An Error Occurred",
+                    e.getMessage()
+            );
         }
 
-        // Find Application
-        Application app = findApplication(plotID, applicationID);
-        if (app == null) {
-            CustomAlert.show(Alert.AlertType.ERROR, "Not Found",
-                    "Application Not Found", "No matching application.");
-            return;
-        }
 
-        // Update status
-        app.updateStatus("Rejected");
-        app.addNote("Registrar Remarks: " + remarks);
-
-        saveUpdatedApplication(app);
-
-        CustomAlert.show(Alert.AlertType.INFORMATION, "Application Rejected",
-                "Status Updated", "Application ID: " + app.getApplicationID());
-
-        backToDashboard(actionEvent);
     }
 
     // ---------------------- APPROVE ----------------------
     @javafx.fxml.FXML
     public void ApproveOA(ActionEvent actionEvent) {
+        try {
+            Integer plotID = parseIntSafe(PlotIDTF.getText());
+            Integer applicationID = parseIntSafe(ApplicationIDTF.getText());
+            String remarks = RemarksTF.getText().trim();
 
-        Integer plotID = parseIntSafe(PlotIDTF.getText());
-        Integer applicationID = parseIntSafe(ApplicationIDTF.getText());
-        String remarks = RemarksTF.getText().trim();
 
-        if (plotID == null || applicationID == null) {
-            CustomAlert.show(Alert.AlertType.ERROR, "Invalid Input",
-                    "Plot ID and Applicant ID required", "Provide required fields.");
-            return;
+            if (plotID == null || applicationID == null) {
+                CustomAlert.show(Alert.AlertType.ERROR, "Invalid Input",
+                        "Plot ID and Applicant ID required", "Provide required fields.");
+                return;
+            }
+
+            // Find Application
+            Application app = findApplication(plotID, applicationID);
+            if (app == null) {
+                CustomAlert.show(Alert.AlertType.ERROR, "Not Found",
+                        "Application Not Found", "No matching application.");
+                return;
+            }
+
+            // Update status
+            app.updateStatus("Approved");
+            if (!remarks.isEmpty()) app.addNote("Registrar Remarks: " + remarks);
+
+            saveUpdatedApplication(app);
+
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Application Approved",
+                    "Status Updated", "Application ID: " + app.getApplicationID());
+
+            BackOA(actionEvent);
         }
-
-        // Find Application
-        Application app = findApplication(plotID, applicationID);
-        if (app == null) {
-            CustomAlert.show(Alert.AlertType.ERROR, "Not Found",
-                    "Application Not Found", "No matching application.");
-            return;
+        catch(NumberFormatException e) {
+            CustomAlert.show(
+                    Alert.AlertType.ERROR,
+                    "Invalid Input",
+                    "Number Format Error",
+                    "Please enter valid numeric values for Plot ID and Application ID."
+            );
         }
-
-        // Update status
-        app.updateStatus("Approved");
-        if (!remarks.isEmpty()) app.addNote("Registrar Remarks: " + remarks);
-
-        saveUpdatedApplication(app);
-
-        CustomAlert.show(Alert.AlertType.INFORMATION, "Application Approved",
-                "Status Updated", "Application ID: " + app.getApplicationID());
-
-        backToDashboard(actionEvent);
+        catch (Exception e) {
+            CustomAlert.show(
+                    Alert.AlertType.ERROR,
+                    "Unexpected Error",
+                    "An Error Occurred",
+                    e.getMessage()
+            );
+        }
     }
 
     // ---------------------- HELPERS ----------------------
@@ -151,27 +193,35 @@ public class ApproveRejectApplicationViewController {
     // ---------------------- BACK ----------------------
     @javafx.fxml.FXML
     public void BackOA(ActionEvent actionEvent) {
-        backToDashboard(actionEvent);
+//        backToDashboard(actionEvent);
+        new CurrentPageLoader().loadWithData(
+                "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml",
+                actionEvent,
+                (LandRegistrarDashBoardViewController controller) -> {
+                    controller.setUserData(landReg);
+                }
+        );
+
     }
 
-    private void backToDashboard(ActionEvent actionEvent) {
-        try {
-            CurrentPageLoader page = new CurrentPageLoader();
-            page.loadWithData(
-                    "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml",
-                    actionEvent,
-                    controller -> {
-                        try {
-                            controller.getClass()
-                                    .getMethod("setUserData", User.class)
-                                    .invoke(controller, loggedInUser);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    private void backToDashboard(ActionEvent actionEvent) {
+//        try {
+//            CurrentPageLoader page = new CurrentPageLoader();
+//            page.loadWithData(
+//                    "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml",
+//                    actionEvent,
+//                    controller -> {
+//                        try {
+//                            controller.getClass()
+//                                    .getMethod("setUserData", User.class)
+//                                    .invoke(controller, loggedInUser);
+//                        } catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//            );
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
