@@ -4,10 +4,12 @@ import group27.landRegistration.nonUsers.Application;
 import group27.landRegistration.users.User;
 import group27.landRegistration.utility.FileManager;
 import group27.landRegistration.utility.CurrentPageLoader;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -23,18 +25,25 @@ public class ReviewPendingApplicationViewController {
 
     @FXML
     private TableView<Application> PendingApplicationsTV;
+
     @FXML
     private TableColumn<Application, Number> ApplicationIDTC;
+
     @FXML
     private TableColumn<Application, Number> PlotIDTC;
+
     @FXML
     private TableColumn<Application, Number> ApplicantIDTC;
+
     @FXML
     private TableColumn<Application, String> ApplicantNameTC;
+
     @FXML
     private TableColumn<Application, String> StatusTC;
+
     @FXML
     private TableColumn<Application, String> MessageTC;
+
     @FXML
     private ComboBox<String> StatusFilterCB;
 
@@ -43,6 +52,7 @@ public class ReviewPendingApplicationViewController {
     private final Map<Integer, String> applicantNameCache = new HashMap<>();
 
     public void initialize() {
+
         ApplicationIDTC.setCellValueFactory(new PropertyValueFactory<>("applicationID"));
         PlotIDTC.setCellValueFactory(new PropertyValueFactory<>("plotID"));
         ApplicantIDTC.setCellValueFactory(new PropertyValueFactory<>("applicantID"));
@@ -92,14 +102,12 @@ public class ReviewPendingApplicationViewController {
         if (filterType == null || filterType.equals("All")) {
             PendingApplicationsTV.setItems(masterList);
         } else {
-            // Filter using Stream API
             List<Application> filtered = masterList.stream()
                     .filter(app -> app.getStatus().equalsIgnoreCase(filterType))
                     .collect(Collectors.toList());
             PendingApplicationsTV.setItems(FXCollections.observableArrayList(filtered));
         }
     }
-
 
     @FXML
     public void BackOA(ActionEvent actionEvent) {

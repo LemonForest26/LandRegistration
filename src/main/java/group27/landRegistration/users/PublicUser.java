@@ -105,4 +105,17 @@ public class PublicUser extends User {
 
         fm.appendItem(request);
     }
+    public group27.landRegistration.nonUsers.Certificate verifyCertificate(int certificateID) {
+        group27.landRegistration.utility.FileManager<group27.landRegistration.nonUsers.Certificate> fm =
+                new group27.landRegistration.utility.FileManager<>("Certificate.dat");
+
+        // Use the find method from FileManager
+        return fm.find(c -> c.getCertificateID() == certificateID);
+    }
+    public group27.landRegistration.nonUsers.Feedback trackRequest(int requestID) {
+        group27.landRegistration.utility.FileManager<group27.landRegistration.nonUsers.Feedback> fm =
+                new group27.landRegistration.utility.FileManager<>("Feedback.dat");
+
+        return fm.find(f -> f.getFeedbackID() == requestID);
+    }
 }
