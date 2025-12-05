@@ -1,63 +1,130 @@
 package group27.landRegistration.controllers.AuditorGoals;
 
+import group27.landRegistration.controllers.AllDashboards.AuditorDashboardViewController;
+import group27.landRegistration.nonUsers.Plot;
+import group27.landRegistration.users.Auditor;
 import group27.landRegistration.users.User;
+import group27.landRegistration.utility.CustomAlert;
 import group27.landRegistration.utility.CurrentPageLoader;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ValuationCheckViewController {
-    @javafx.fxml.FXML
-    private TextField PlotIDTF;
-    @javafx.fxml.FXML
-    private TableColumn UserTC;
-    @javafx.fxml.FXML
-    private TableColumn AreaTC;
-    @javafx.fxml.FXML
-    private TableView PlotDetailsTV;
-    @javafx.fxml.FXML
-    private TableColumn CertifiedTC;
-    @javafx.fxml.FXML
-    private TableColumn TimestampTC;
 
-    private User loggedInUser;
+    @FXML private TextField PlotIDTF;
+    @FXML private TableView<Plot> PlotDetailsTV;
+    @FXML private TableColumn<Plot, Integer> UserTC; // Owner ID
+    @FXML private TableColumn<Plot, Double> AreaTC;
+    @FXML private TableColumn<Plot, String> CertifiedTC;
+    @FXML private TableColumn<Plot, String> TimestampTC; // Using Zoning as proxy or Survey Log count
 
+    private Auditor loggedInAuditor;
+    private ObservableList<Plot> masterList = FXCollections.observableArrayList();
+
+    @FXML
     private void initialize() {
+        // 1. Setup Columns
+        UserTC.setCellValueFactory(new PropertyValueFactory<>("ownerID"));
+        AreaTC.setCellValueFactory(new PropertyValueFactory<>("area"));
 
+        // Custom Cell: Show "Zoning" in Timestamp column (or actual timestamp if available)
+        TimestampTC.setCellValueFactory(cellData ->
+                new SimpleStringProperty(cellData.getValue().getZoning()));
+
+        // Custom Cell: Estimated Valuation Calculation
+        CertifiedTC.setCellValueFactory(cellData -> {
+            double area = cellData.getValue().getArea();
+            double estimatedValue = area * 5000; // Example rate
+            return new SimpleStringProperty(String.format("%,.2f BDT", estimatedValue));
+        });
+        // Renaming column header in logic: 'CertifiedTC' is used here for Valuation display
+        // based on the context of "Valuation Check".
+
+        // 2. Add Filter Listener to Text Field
+        PlotIDTF.textProperty().addListener((observable, oldValue, newValue) -> {
+            filterPlots(newValue);
+        });
     }
 
     public void setUserData(User user) {
-        this.loggedInUser = user; // store user for reuse
+        if (user instanceof Auditor) {
+            this.loggedInAuditor = (Auditor) user;
+            loadData();
+        }
     }
 
     public User getLoggedInUser(){
-        return loggedInUser;
+        return loggedInAuditor;
     }
 
-    @javafx.fxml.FXML
-    public void MarkForReviewOA(ActionEvent actionEvent) {
+    private void loadData() {
+        if (loggedInAuditor == null) return;
+        List<Plot> plots = loggedInAuditor.getAllPlots();
+        masterList.setAll(plots);
+        PlotDetailsTV.setItems(masterList);
     }
 
-    @javafx.fxml.FXML
-    public void BackOA(ActionEvent actionEvent) {
-        try {
-            CurrentPageLoader page = new CurrentPageLoader();
-            page.loadWithData(
-                    "/group27/landRegistration/AllDashboards/AuditorDashboardView.fxml",
-                    actionEvent,
-                    controller -> {
-                        try {
-                            controller.getClass()
-                                    .getMethod("setUserData", User.class)
-                                    .invoke(controller, loggedInUser);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
+    private void filterPlots(String query) {
+        if (query == null || query.isEmpty()) {
+            PlotDetailsTV.setItems(masterList);
+            return;
         }
+
+        List<Plot> filtered = masterList.stream()
+                .filter(p -> String.valueOf(p.getPlotID()).contains(query) ||
+                        String.valueOf(p.getOwnerID()).contains(query))
+                .collect(Collectors.toList());
+
+        PlotDetailsTV.setItems(FXCollections.observableArrayList(filtered));
+    }
+
+    @FXML
+    public void MarkForReviewOA(ActionEvent actionEvent) {
+        Plot selectedPlot = PlotDetailsTV.getSelectionModel().getSelectedItem();
+
+        if (selectedPlot == null) {
+            CustomAlert.show(Alert.AlertType.WARNING, "No Selection", "Warning",
+                    "Please select a plot to flag for valuation review.");
+            return;
+        }
+
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Flag Valuation");
+        dialog.setHeaderText("Flagging Plot ID: " + selectedPlot.getPlotID());
+        dialog.setContentText("Reason for discrepancy:");
+
+        dialog.showAndWait().ifPresent(reason -> {
+            if (reason.trim().isEmpty()) return;
+
+            // Delegate to Model
+            loggedInAuditor.flagPlotValuation(selectedPlot, reason);
+
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Plot Flagged",
+                    "The plot has been marked for further valuation assessment.");
+        });
+    }
+
+    @FXML
+    public void BackOA(ActionEvent actionEvent) {
+        new CurrentPageLoader().loadWithData(
+                "/group27/landRegistration/AllDashboards/AuditorDashboardView.fxml",
+                actionEvent,
+                (AuditorDashboardViewController controller) -> {
+                    controller.setUserData(loggedInAuditor);
+                }
+        );
     }
 }
