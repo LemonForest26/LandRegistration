@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,7 +9,7 @@
 
 <AnchorPane prefHeight="708.0" prefWidth="950.0" style="-fx-background-image: blue;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AllDashboards.BankRepresentativeDashboardViewController">
    <children>
-      <Label layoutX="34.0" layoutY="111.0" prefHeight="30.0" prefWidth="164.0" text="Bank Operations">
+      <Label layoutX="56.0" layoutY="111.0" prefHeight="30.0" prefWidth="164.0" text="Bank Operations">
          <font>
             <Font name="System Bold Italic" size="20.0" />
          </font>
@@ -20,14 +19,13 @@
             <Font name="System Bold Italic" size="50.0" />
          </font>
       </Label>
-      <Button layoutX="44.0" layoutY="293.0" mnemonicParsing="false" onAction="#ReconcileTransactionsOnAction" text="Reconcile Transactions" textAlignment="JUSTIFY" />
-      <Button layoutX="43.0" layoutY="328.0" mnemonicParsing="false" onAction="#RefundCorrectionOnAction" text="Refund/Correction" textAlignment="JUSTIFY" />
-      <Button layoutX="45.0" layoutY="363.0" mnemonicParsing="false" onAction="#ValiddatePaymentProofOnAction" text="Validdate Payment Proof" textAlignment="JUSTIFY" />
-      <Button layoutX="44.0" layoutY="169.0" mnemonicParsing="false" onAction="#VerifyPaymentonAction" text="Verify Payment" textAlignment="JUSTIFY" />
-      <Button layoutX="42.0" layoutY="210.0" mnemonicParsing="false" onAction="#ApproveMortgageonAction" text="Approve Mortgage" textAlignment="JUSTIFY" />
-      <Button layoutX="45.0" layoutY="250.0" mnemonicParsing="false" onAction="#SendPaymentNoticeOnAction" text="Send  Payment Notice" textAlignment="JUSTIFY" />
-      <Button layoutX="47.0" layoutY="399.0" mnemonicParsing="false" onAction="#TransactionLogsOnAction" text="Transaction Logs" textAlignment="JUSTIFY" />
-      <DatePicker fx:id="DateofPaymentSlipDatePicker" layoutX="44.0" layoutY="492.0" promptText="Date of Payment Slip" />
+      <Button layoutX="44.0" layoutY="293.0" mnemonicParsing="false" onAction="#ReconcileTransactionsOnAction" prefHeight="26.0" prefWidth="195.0" text="Reconcile Transactions" textAlignment="JUSTIFY" />
+      <Button layoutX="42.0" layoutY="335.0" mnemonicParsing="false" onAction="#RefundCorrectionOnAction" prefHeight="26.0" prefWidth="195.0" text="Refund/Correction" textAlignment="JUSTIFY" />
+      <Button layoutX="44.0" layoutY="378.0" mnemonicParsing="false" onAction="#ValiddatePaymentProofOnAction" prefHeight="26.0" prefWidth="195.0" text="Validdate Payment Proof" textAlignment="JUSTIFY" />
+      <Button layoutX="40.0" layoutY="170.0" mnemonicParsing="false" onAction="#VerifyPaymentonAction" prefHeight="26.0" prefWidth="195.0" text="Verify Payment" textAlignment="JUSTIFY" />
+      <Button layoutX="42.0" layoutY="210.0" mnemonicParsing="false" onAction="#ApproveMortgageonAction" prefHeight="26.0" prefWidth="195.0" text="Approve Mortgage" textAlignment="JUSTIFY" />
+      <Button layoutX="42.0" layoutY="250.0" mnemonicParsing="false" onAction="#SendPaymentNoticeOnAction" prefHeight="26.0" prefWidth="195.0" text="Send Payment Notice" textAlignment="JUSTIFY" />
+      <Button layoutX="42.0" layoutY="420.0" mnemonicParsing="false" onAction="#TransactionLogsOnAction" prefHeight="26.0" prefWidth="195.0" text="Transaction Logs" textAlignment="JUSTIFY" />
       <BorderPane layoutX="280.0" layoutY="97.0" prefHeight="530.0" prefWidth="624.0" style="-fx-border-color: blue;">
          <center>
             <AnchorPane prefHeight="414.0" prefWidth="622.0" BorderPane.alignment="CENTER">
@@ -44,17 +42,17 @@
                   </Label>
                   <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="43.18212890625" />
                   <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="19.73675537109375" />
-                  <Label fx:id="UserNameLb" layoutX="57.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
-                  <Label fx:id="UserIDLb" layoutX="34.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
+                  <Label fx:id="UserNameLb" layoutX="66.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
+                  <Label fx:id="UserIDLb" layoutX="67.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
                </children>
             </AnchorPane>
          </center>
       </BorderPane>
-      <Button layoutX="735.0" layoutY="653.0" mnemonicParsing="false" onAction="#BacktoHomePageOnAction" text="Back to Home Page">
+      <Button layoutX="763.0" layoutY="653.0" mnemonicParsing="false" onAction="#BacktoHomePageOnAction" text="Back to Home Page">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="47.0" layoutY="444.0" mnemonicParsing="false" onAction="#PaymentVerificationPieChartonAction" text="Payment Verification PieChart" />
+      <Button layoutX="45.0" layoutY="459.0" mnemonicParsing="false" onAction="#PaymentVerificationPieChartonAction" prefHeight="26.0" prefWidth="195.0" text="Payment Verification PieChart" />
    </children>
 </AnchorPane>

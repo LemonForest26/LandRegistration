@@ -213,4 +213,26 @@ public class LandRegistrarDashBoardViewController {
             e.printStackTrace();
         }
     }
+
+    @javafx.fxml.FXML
+    public void LandUsagePieChartOA(ActionEvent actionEvent) {
+        try {
+            CurrentPageLoader page = new CurrentPageLoader();
+            page.loadWithData(
+                    "/group27/landRegistration/LandRegistrarGoals/LandUsageAnalysisView.fxml",
+                    actionEvent,
+                    controller -> {
+                        try {
+                            controller.getClass()
+                                    .getMethod("setUserData", User.class)
+                                    .invoke(controller, loggedInUser);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

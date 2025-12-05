@@ -3,10 +3,8 @@ package group27.landRegistration.controllers.AuditorGoals;
 import group27.landRegistration.controllers.AllDashboards.AuditorDashboardViewController;
 import group27.landRegistration.nonUsers.Application;
 import group27.landRegistration.users.Auditor;
-import group27.landRegistration.users.LandRegistrar;
 import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CustomAlert;
-import group27.landRegistration.utility.FileManager;
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -15,47 +13,37 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.StringConverter;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ApprovalSamplingViewController {
 
-    @FXML private ComboBox<User> RegistrarNameCB;
     @FXML private TableView<Application> ApprovalSamplingTV;
     @FXML private TableColumn<Application, Number> ApplicationIDTC;
     @FXML private TableColumn<Application, Number> PlotIDTC;
-    @FXML private TableColumn<Application, String> StatusTC;
     @FXML private TableColumn<Application, String> ApprovedDateTC;
+    @FXML private TableColumn<Application, String> StatusTC;
 
     @FXML private DatePicker StartDateDP;
     @FXML private DatePicker EndDateDP;
 
     private Auditor loggedInAuditor;
     private ObservableList<Application> masterList = FXCollections.observableArrayList();
-    private Map<Integer, String> userNameCache = new HashMap<>();
-    @FXML
-    private TableColumn RegistrarNameTC;
 
     @FXML
     private void initialize() {
-        // 1. Setup Columns
+        // 1. Setup Columns (Matching FXML fx:ids)
         ApplicationIDTC.setCellValueFactory(new PropertyValueFactory<>("applicationID"));
         PlotIDTC.setCellValueFactory(new PropertyValueFactory<>("plotID"));
         StatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Format Date
+        // Format Date Column
         ApprovedDateTC.setCellValueFactory(cellData ->
-                new SimpleStringProperty(cellData.getValue().getDateUpdated().toString()));
-
-
-        // 2. Load Helpers
-        loadUserCache();
-        loadRegistrars();
+                new SimpleStringProperty(cellData.getValue().getDateUpdated() != null
+                        ? cellData.getValue().getDateUpdated().toString()
+                        : "N/A"));
     }
 
     public void setUserData(User user) {
@@ -69,32 +57,6 @@ public class ApprovalSamplingViewController {
         return loggedInAuditor;
     }
 
-    private void loadUserCache() {
-        FileManager<User> fm = new FileManager<>("users.dat");
-        List<User> users = fm.loadList();
-        for (User u : users) {
-            userNameCache.put(u.getUserID(), u.getName());
-        }
-    }
-
-    private void loadRegistrars() {
-        FileManager<User> fm = new FileManager<>("users.dat");
-        List<User> users = fm.loadList();
-        List<User> registrars = users.stream()
-                .filter(u -> u instanceof LandRegistrar)
-                .collect(Collectors.toList());
-
-        RegistrarNameCB.setItems(FXCollections.observableArrayList(registrars));
-
-        // Display Name in ComboBox
-        RegistrarNameCB.setConverter(new StringConverter<User>() {
-            @Override
-            public String toString(User u) { return u == null ? "" : u.getName(); }
-            @Override
-            public User fromString(String s) { return null; }
-        });
-    }
-
     private void loadData() {
         if (loggedInAuditor == null) return;
         List<Application> approvedApps = loggedInAuditor.getApprovedApplications();
@@ -103,38 +65,25 @@ public class ApprovalSamplingViewController {
     }
 
     @FXML
-    public void FilterRegistrarOA(ActionEvent actionEvent) {
-
-        User selectedRegistrar = RegistrarNameCB.getValue();
-        if (selectedRegistrar == null) {
-            ApprovalSamplingTV.setItems(masterList);
-            return;
-        }
-
-        String regName = selectedRegistrar.getName();
-
-        List<Application> filtered = masterList.stream()
-                .filter(app -> app.getNotes() != null && app.getNotes().contains(regName))
-                .collect(Collectors.toList());
-
-        ApprovalSamplingTV.setItems(FXCollections.observableArrayList(filtered));
-    }
-
-    @FXML
     public void DateFilterOA(ActionEvent actionEvent) {
         LocalDate start = StartDateDP.getValue();
         LocalDate end = EndDateDP.getValue();
 
+        // If fields are cleared, reset table
         if (start == null && end == null) {
             ApprovalSamplingTV.setItems(masterList);
             return;
         }
 
+        // Filter Logic
         List<Application> filtered = masterList.stream()
                 .filter(app -> {
                     LocalDate appDate = app.getDateUpdated();
+                    if (appDate == null) return false;
+
                     boolean afterStart = (start == null) || !appDate.isBefore(start);
                     boolean beforeEnd = (end == null) || !appDate.isAfter(end);
+
                     return afterStart && beforeEnd;
                 })
                 .collect(Collectors.toList());
@@ -148,17 +97,28 @@ public class ApprovalSamplingViewController {
 
         if (selectedApp == null) {
             CustomAlert.show(Alert.AlertType.WARNING, "No Selection", "Warning",
-                    "Select an application to flag.");
+                    "Please select an application from the table to flag.");
             return;
         }
 
-        // --- FIXED METHOD CALL HERE ---
-        loggedInAuditor.flagApplicationForReview(selectedApp, "Flagged by Auditor during sampling.");
+        // Input Dialog for Flag Reason
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Flag Application");
+        dialog.setHeaderText("Flagging Application #" + selectedApp.getApplicationID());
+        dialog.setContentText("Enter reason for flagging:");
 
-        CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Application Flagged",
-                "A flag note has been added to Application #" + selectedApp.getApplicationID());
+        dialog.showAndWait().ifPresent(reason -> {
+            if (reason.trim().isEmpty()) return;
 
-        loadData(); // Refresh table
+            // Delegate to Model
+            loggedInAuditor.flagApplicationForReview(selectedApp, reason);
+
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Flag Added",
+                    "The application has been marked for review.");
+
+            // Refresh Data
+            loadData();
+        });
     }
 
     @FXML

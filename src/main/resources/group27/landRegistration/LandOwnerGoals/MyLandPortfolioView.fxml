@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="958.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.LandOwnerGoals.MyLandPortfolioViewController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="My Land Portfolio">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Text>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <PieChart fx:id="PortfolioPieChart" layoutX="229.0" layoutY="100.0" prefHeight="400.0" prefWidth="500.0" title="Asset Breakdown" />
+
+                <HBox alignment="CENTER" layoutX="279.0" layoutY="44.0" prefHeight="50.0" prefWidth="400.0" spacing="40.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5;">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View By:" />
+                        <RadioButton fx:id="AreaRB" mnemonicParsing="false" onAction="#LoadChartOA" selected="true" text="Land Size (Sq.ft)">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="PortfolioTG" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="ValueRB" mnemonicParsing="false" onAction="#LoadChartOA" text="Est. Market Value" toggleGroup="$PortfolioTG" />
+                    </children>
+                </HBox>
+
+                <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="75.0" text="Back" />
+                <Text fx:id="SummaryText" layoutX="229.0" layoutY="540.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="500.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

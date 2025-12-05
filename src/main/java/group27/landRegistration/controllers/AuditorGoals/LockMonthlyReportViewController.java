@@ -37,14 +37,19 @@ public class LockMonthlyReportViewController {
 
     @FXML
     private void initialize() {
-        // 1. Setup Columns
+
+        try {
+            Class.forName("group27.landRegistration.nonUsers.MonthlyReport");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         MonthTC.setCellValueFactory(new PropertyValueFactory<>("month"));
         RegistrarTC.setCellValueFactory(new PropertyValueFactory<>("registrarID"));
         StatusTC.setCellValueFactory(new PropertyValueFactory<>("status"));
         CreatedDateTC.setCellValueFactory(new PropertyValueFactory<>("createdDate"));
         LastUpdatedTC.setCellValueFactory(new PropertyValueFactory<>("lastUpdated"));
 
-        // 2. Setup Month Filter
         SelectMonthCB.setItems(FXCollections.observableArrayList(
                 "All", "January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"

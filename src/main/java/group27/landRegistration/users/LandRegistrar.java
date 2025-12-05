@@ -16,7 +16,6 @@ public class LandRegistrar extends User {
         super(name, password, email, gender, NID, phoneNumber, doB);
     }
 
-    // --- GOAL: REVIEW & PROCESS APPLICATIONS ---
     public void processApplication(Application app, String newStatus, String remarks) {
         // 1. Update the Application Object
         app.setStatus(newStatus);
@@ -37,13 +36,25 @@ public class LandRegistrar extends User {
         }
         appFM.saveList(apps);
 
-        // 3. Update Plot.dat (Sync the change inside the Plot object)
+        // 3. Update Plot.dat (Sync changes & TRANSFER OWNERSHIP)
         FileManager<Plot> plotFM = new FileManager<>("Plot.dat");
         List<Plot> plots = plotFM.loadList();
 
-        for (Plot p : plots) {
+        // --- FIXED LOOP: Changed to indexed loop so 'i' works ---
+        for (int i = 0; i < plots.size(); i++) {
+            Plot p = plots.get(i);
+
             if (p.getPlotID() == app.getPlotID()) {
-                p.updateApplication(app); // Assumes Plot has this method
+                // Update the internal application list
+                p.updateApplication(app);
+
+                // If Approved, the Applicant becomes the new Owner of the Plot
+                if ("Approved".equalsIgnoreCase(newStatus)) {
+                    p.setOwnerID(app.getApplicantID());
+                    p.addSurveyLog("Ownership transferred to ID " + app.getApplicantID() + " via Application Approval.");
+                }
+
+                plots.set(i, p); // Now 'i' is recognized
                 break;
             }
         }
@@ -107,11 +118,14 @@ public class LandRegistrar extends User {
         List<Plot> plots = fm.loadList();
         boolean found = false;
 
-        for (Plot p : plots) {
+        for (int i = 0; i < plots.size(); i++) {
+            Plot p = plots.get(i);
             if (p.getPlotID() == plotID) {
                 // Update owner
-                p.setOwnerID((int) newOwnerID); // Casting based on Plot class definition
+                p.setOwnerID((int) newOwnerID);
                 p.addSurveyLog("Ownership transferred from " + oldOwnerID + " to " + newOwnerID + " by Registrar.");
+
+                plots.set(i, p); // Explicitly update list
                 found = true;
                 break;
             }
@@ -122,12 +136,20 @@ public class LandRegistrar extends User {
         }
     }
 
-    // Placeholders for methods that might be handled directly by controllers
-    public void reviewPendingApplilcation() {
-        // Logic handled in ReviewPendingApplicationViewController via FileManager
-    }
+    public java.util.Map<String, Double> getZoningStatistics(boolean byArea) {
+        FileManager<Plot> fm = new FileManager<>("Plot.dat");
+        List<Plot> plots = fm.loadList();
 
-    public void applicatinApproval() {
-        // Logic handled in ApproveRejectApplicationViewController
+        java.util.Map<String, Double> stats = new java.util.HashMap<>();
+
+        for (Plot p : plots) {
+            String zone = p.getZoning();
+            if (zone == null || zone.isEmpty()) zone = "Unclassified";
+
+            double valueToAdd = byArea ? p.getArea() : 1.0;
+
+            stats.put(zone, stats.getOrDefault(zone, 0.0) + valueToAdd);
+        }
+        return stats;
     }
 }

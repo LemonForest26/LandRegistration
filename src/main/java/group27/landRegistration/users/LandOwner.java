@@ -61,4 +61,23 @@ public class LandOwner extends User {
 
         fm.appendItem(fb);
     }
+    public java.util.Map<String, Double> getPortfolioStatistics(boolean byValue) {
+        FileManager<Plot> fm = new FileManager<>("Plot.dat");
+        List<Plot> allPlots = fm.loadList();
+
+        java.util.Map<String, Double> stats = new java.util.HashMap<>();
+
+        for (Plot p : allPlots) {
+            // Only process plots owned by THIS user
+            if (p.getOwnerID() == this.getUserID()) {
+                String label = "Plot " + p.getPlotID();
+
+                // If byValue is true, multiply area by 1150. Else just use area.
+                double value = byValue ? (p.getArea() * 1150) : p.getArea();
+
+                stats.put(label, value);
+            }
+        }
+        return stats;
+    }
 }

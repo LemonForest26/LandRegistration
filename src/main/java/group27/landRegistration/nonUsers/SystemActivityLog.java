@@ -8,6 +8,25 @@ import java.util.List;
 
 public class SystemActivityLog implements Serializable {
     private static final long serialVersionUID = 1L;
+    private static int IDCounter = 1000;
+    static {
+        try {
+            File file = new File("SystemActivity.dat");
+            if (file.exists() && file.length() > 0) {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                List<SystemActivityLog> logs = (List<SystemActivityLog>) ois.readObject();
+                ois.close();
+
+                if (!logs.isEmpty()) {
+                    int lastID = logs.get(logs.size() - 1).getLogID();
+                    IDCounter = lastID;
+                }
+            }
+        } catch (Exception ignored) {
+            // If failed → keep default 1000
+        }
+    }
 
     private int logID;
     private LocalDateTime timestamp;
@@ -16,7 +35,8 @@ public class SystemActivityLog implements Serializable {
     private boolean isFlagged;
 
     public SystemActivityLog(int logID, int userID, String action) {
-        this.logID = logID;
+        IDCounter++;
+        this.logID = IDCounter;
         this.timestamp = LocalDateTime.now();
         this.userID = userID;
         this.action = action;
@@ -52,9 +72,9 @@ public class SystemActivityLog implements Serializable {
             int id = 100;
 
             dummies.add(new SystemActivityLog(id++, 1002, "Logged In", LocalDateTime.now().minusHours(5)));
-            dummies.add(new SystemActivityLog(id++, 1002, "Submitted Application #5001", LocalDateTime.now().minusHours(4)));
-            dummies.add(new SystemActivityLog(id++, 8888, "Admin Login", LocalDateTime.now().minusHours(3)));
-            dummies.add(new SystemActivityLog(id++, 8888, "Deleted User #999", LocalDateTime.now().minusHours(3).minusMinutes(10)));
+            dummies.add(new SystemActivityLog(id++, 1002, "Submitted Application #11", LocalDateTime.now().minusHours(4)));
+            dummies.add(new SystemActivityLog(id++, 1003, "Admin Login", LocalDateTime.now().minusHours(3)));
+            dummies.add(new SystemActivityLog(id++, 1003, "Deleted User #1001", LocalDateTime.now().minusHours(3).minusMinutes(10)));
             dummies.add(new SystemActivityLog(id++, 1005, "Attempted unauthorized access", LocalDateTime.now().minusHours(1)));
 
             try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {

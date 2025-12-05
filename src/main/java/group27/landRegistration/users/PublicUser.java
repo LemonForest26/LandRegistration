@@ -81,4 +81,32 @@ public class PublicUser extends User {
     public Feedback trackRequest(int requestID) {
         return new FileManager<Feedback>("Feedback.dat").find(f -> f.getFeedbackID() == requestID);
     }
+    public java.util.Map<String, Double> getDistrictStatistics(boolean byArea) {
+        FileManager<Plot> fm = new FileManager<>("Plot.dat");
+        List<Plot> allPlots = fm.loadList();
+
+        java.util.Map<String, Double> stats = new java.util.HashMap<>();
+
+        // Define known districts to look for
+        String[] districts = {"Dhaka", "Chittagong", "Rajshahi", "Khulna", "Sylhet", "Gazipur", "Comilla", "Narayanganj"};
+
+        for (Plot p : allPlots) {
+            String loc = p.getLocation();
+            if (loc == null) loc = "";
+
+            String category = "Other";
+
+            // Check if location contains a known district name
+            for (String district : districts) {
+                if (loc.toLowerCase().contains(district.toLowerCase())) {
+                    category = district;
+                    break;
+                }
+            }
+
+            double value = byArea ? p.getArea() : 1.0;
+            stats.put(category, stats.getOrDefault(category, 0.0) + value);
+        }
+        return stats;
+    }
 }

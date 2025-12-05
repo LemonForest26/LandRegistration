@@ -31,18 +31,21 @@ public class ReviewUserPermissionsViewController {
 
     @FXML
     private void initialize() {
-        // 1. Setup Columns
+        try {
+            Class.forName("group27.landRegistration.nonUsers.UserPermission");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         ModuleTC.setCellValueFactory(new PropertyValueFactory<>("module"));
         AccessLevelTC.setCellValueFactory(new PropertyValueFactory<>("accessLevel"));
 
-        // Custom cell to show Flag status visually
         ActionTC.setCellValueFactory(cellData -> {
             UserPermission p = cellData.getValue();
             String prefix = p.isFlaggedForReview() ? "🚩 " : "";
             return new SimpleStringProperty(prefix + p.getAction());
         });
 
-        // 2. Setup ComboBox Converter (to show Names instead of Object IDs)
         SystemUsersCB.setConverter(new StringConverter<User>() {
             @Override
             public String toString(User user) {

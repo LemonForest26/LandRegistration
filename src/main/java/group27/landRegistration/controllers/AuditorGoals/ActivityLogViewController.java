@@ -25,6 +25,15 @@ public class ActivityLogViewController {
 
     @FXML
     private void initialize() {
+        // --- CRITICAL FIX: Force SystemActivityLog class to load ---
+        // This triggers the static block in SystemActivityLog.java to generate the .dat file
+        // if it was deleted.
+        try {
+            Class.forName("group27.landRegistration.nonUsers.SystemActivityLog");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         // Setup Columns
         TimestampTC.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getFormattedTimestamp()));
@@ -81,6 +90,7 @@ public class ActivityLogViewController {
 
             // Refresh Table
             loadData();
+            SystemActivityTV.refresh();
 
             CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Entry Flagged",
                     "The suspicious activity has been flagged for review.");

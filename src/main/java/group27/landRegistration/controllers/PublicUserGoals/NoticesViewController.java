@@ -22,6 +22,14 @@ public class NoticesViewController {
 
     @FXML
     private void initialize() {
+        // --- CRITICAL FIX: Force Notice class to load ---
+        // This executes the static block in Notice.java to generate the dummy data file if it's missing.
+        try {
+            Class.forName("group27.landRegistration.nonUsers.Notice");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         // Add listener to show details when a notice is selected
         NoticeListView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
@@ -38,7 +46,7 @@ public class NoticesViewController {
     public void setUserData(User user) {
         if (user instanceof PublicUser) {
             this.loggedInPublicUser = (PublicUser) user;
-            // Load default category
+            // Load default category when user data is set
             loadNotices("Announcement");
         }
     }

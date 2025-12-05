@@ -23,7 +23,6 @@ public class AnnualIntegritySummaryViewController {
 
     @FXML
     private void initialize() {
-        // Populate ComboBox with current year and previous 4 years
         int currentYear = Year.now().getValue();
         YearDP.setItems(FXCollections.observableArrayList(
                 currentYear, currentYear - 1, currentYear - 2, currentYear - 3, currentYear - 4
@@ -54,13 +53,10 @@ public class AnnualIntegritySummaryViewController {
         int selectedYear = YearDP.getValue();
 
         try {
-            // 1. Generate Report String (Logic in Model)
             String reportContent = loggedInAuditor.generateIntegrityReport(selectedYear);
 
-            // 2. Show Preview
             PreviewTA.setText(reportContent);
 
-            // 3. Save as official Report object to Report.dat
             loggedInAuditor.saveReportToDatabase(reportContent, "Annual Integrity Summary " + selectedYear);
 
             CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Report Compiled",

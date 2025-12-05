@@ -32,28 +32,23 @@ public class ValuationCheckViewController {
     @FXML private TableColumn<Plot, String> TimestampTC; // Using Zoning as proxy or Survey Log count
 
     private Auditor loggedInAuditor;
-    private ObservableList<Plot> masterList = FXCollections.observableArrayList();
+    private final ObservableList<Plot> masterList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize() {
-        // 1. Setup Columns
+
         UserTC.setCellValueFactory(new PropertyValueFactory<>("ownerID"));
         AreaTC.setCellValueFactory(new PropertyValueFactory<>("area"));
 
-        // Custom Cell: Show "Zoning" in Timestamp column (or actual timestamp if available)
         TimestampTC.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getZoning()));
 
-        // Custom Cell: Estimated Valuation Calculation
         CertifiedTC.setCellValueFactory(cellData -> {
             double area = cellData.getValue().getArea();
             double estimatedValue = area * 5000; // Example rate
             return new SimpleStringProperty(String.format("%,.2f BDT", estimatedValue));
         });
-        // Renaming column header in logic: 'CertifiedTC' is used here for Valuation display
-        // based on the context of "Valuation Check".
 
-        // 2. Add Filter Listener to Text Field
         PlotIDTF.textProperty().addListener((observable, oldValue, newValue) -> {
             filterPlots(newValue);
         });
@@ -109,7 +104,6 @@ public class ValuationCheckViewController {
         dialog.showAndWait().ifPresent(reason -> {
             if (reason.trim().isEmpty()) return;
 
-            // Delegate to Model
             loggedInAuditor.flagPlotValuation(selectedPlot, reason);
 
             CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Plot Flagged",

@@ -13,32 +13,34 @@
    <left>
       <VBox prefHeight="590.0" prefWidth="226.0" style="-fx-background-color: #edebeb;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="18.0" prefWidth="130.0" text="Registrar Menu:">
+            <Label alignment="CENTER" prefHeight="22.0" prefWidth="240.0" text="Registrar Menu:">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#ReviewPendingApplicationsOA" prefHeight="26.0" prefWidth="190.0" text="Rewiew Pending Applications" />
+            <Button mnemonicParsing="false" onAction="#ApproveRejectOA" prefHeight="26.0" prefWidth="250.0" text="Approve/Reject" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#ApproveRejectOA" prefHeight="26.0" prefWidth="190.0" text="Approve/Reject" />
+            <Button mnemonicParsing="false" onAction="#ReviewPendingApplicationsOA" prefHeight="26.0" prefWidth="240.0" text="Rewiew Pending Applications" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#GenerateCertificateOA" prefHeight="26.0" prefWidth="190.0" text="Generate Certificate" />
+            <Button mnemonicParsing="false" onAction="#GenerateCertificateOA" prefHeight="26.0" prefWidth="274.0" text="Generate Certificate" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#TransferOwnershipOA" prefHeight="26.0" prefWidth="190.0" text="Transfer Ownership" />
+            <Button mnemonicParsing="false" onAction="#TransferOwnershipOA" prefHeight="26.0" prefWidth="254.0" text="Transfer Ownership" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#DisputesOA" prefHeight="26.0" prefWidth="190.0" text="Disputes" />
+            <Button mnemonicParsing="false" onAction="#ZoningUpdateOA" prefHeight="26.0" prefWidth="270.0" text="Zoning Update" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#ZoningUpdateOA" prefHeight="26.0" prefWidth="190.0" text="Zoning Update" />
+            <Button mnemonicParsing="false" onAction="#DisputesOA" prefHeight="26.0" prefWidth="258.0" text="Disputes" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#OfficerPerformanceOA" prefHeight="26.0" prefWidth="190.0" text="Officer Performance" />
+            <Button mnemonicParsing="false" onAction="#OfficerPerformanceOA" prefHeight="26.0" prefWidth="230.0" text="Officer Performance" />
             <Label prefHeight="37.0" prefWidth="170.0" />
-            <Button mnemonicParsing="false" onAction="#EditProfileOA" prefHeight="26.0" prefWidth="190.0" text="Edit Profile" />
+            <Button mnemonicParsing="false" onAction="#LandUsagePieChartOA" prefHeight="26.0" prefWidth="296.0" text="Land Usage Pie Chart" />
+            <Label prefHeight="37.0" prefWidth="170.0" />
+            <Button mnemonicParsing="false" onAction="#EditProfileOA" prefHeight="26.0" prefWidth="251.0" text="Edit Profile" />
          </children>
       </VBox>
    </left>
    <top>
-      <HBox alignment="CENTER" prefHeight="46.0" prefWidth="974.0" style="-fx-background-color: #c7c5c5;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="958.0" style="-fx-background-color: #c7c5c5;" BorderPane.alignment="CENTER">
          <children>
             <Label prefHeight="18.0" prefWidth="816.0" />
             <Button mnemonicParsing="false" onAction="#LogOutOA" prefHeight="26.0" prefWidth="102.0" text="Log Out" />
@@ -60,8 +62,8 @@
             </Label>
             <Text layoutX="40.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="43.18212890625" />
             <Text layoutX="40.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="19.73675537109375" />
-            <Label fx:id="UserNameLb" layoutX="83.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
-            <Label fx:id="UserIDLb" layoutX="60.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
+            <Label fx:id="UserNameLb" layoutX="95.0" layoutY="13.0" prefHeight="18.0" prefWidth="338.0" />
+            <Label fx:id="UserIDLb" layoutX="95.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
          </children>
       </AnchorPane>
    </center>

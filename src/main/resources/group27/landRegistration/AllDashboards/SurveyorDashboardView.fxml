@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AllDashboards.SurveyorDashboardViewController">
+<AnchorPane prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group27.landRegistration.controllers.AllDashboards.SurveyorDashboardViewController">
    <children>
       <Button layoutX="26.0" layoutY="247.0" mnemonicParsing="false" onAction="#VerifyBoundaryOnAction" prefHeight="25.0" prefWidth="177.0" text="Verify Boundary" />
       <Label layoutX="280.0" layoutY="56.0" text="Surveyor Dashboard">
@@ -15,19 +15,19 @@
             <Font name="System Bold Italic" size="50.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="143.0" text="Surveyor Tools">
+      <Label layoutX="46.0" layoutY="143.0" text="Surveyor Tools">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Button layoutX="26.0" layoutY="204.0" mnemonicParsing="false" onAction="#StartNewSurveyOnAction" prefHeight="25.0" prefWidth="177.0" text=" Start New Survey" />
       <Button layoutX="26.0" layoutY="288.0" mnemonicParsing="false" onAction="#PieChartOnAction" text="Payment Verification Pie Chart" />
-      <Button layoutX="26.0" layoutY="326.0" mnemonicParsing="false" onAction="#UpdateSurveyrecordOnAction" prefHeight="25.0" prefWidth="177.0" text="Update Survey record" />
-      <Button layoutX="26.0" layoutY="363.0" mnemonicParsing="false" onAction="#InspectionRequestsOnAction" prefHeight="25.0" prefWidth="177.0" text="Inspection Requests" />
-      <Button layoutX="780.0" layoutY="638.0" mnemonicParsing="false" onAction="#BackToHomepageOnAction" text="Back To Home page" />
-      <Button layoutX="26.0" layoutY="471.0" mnemonicParsing="false" onAction="#ViewSurveyLogsOnAction" prefHeight="25.0" prefWidth="177.0" text="View Survey Logs" />
-      <Button layoutX="26.0" layoutY="435.0" mnemonicParsing="false" onAction="#DisputeEvidenceOnAction" prefHeight="25.0" prefWidth="177.0" text="Dispute Evidence" />
-      <Button layoutX="26.0" layoutY="400.0" mnemonicParsing="false" onAction="#QuickMeasurementOnAction" prefHeight="25.0" prefWidth="177.0" text="Quick Measurement" />
+      <Button layoutX="26.0" layoutY="328.0" mnemonicParsing="false" onAction="#UpdateSurveyrecordOnAction" prefHeight="25.0" prefWidth="177.0" text="Update Survey record" />
+      <Button layoutX="26.0" layoutY="368.0" mnemonicParsing="false" onAction="#InspectionRequestsOnAction" prefHeight="25.0" prefWidth="177.0" text="Inspection Requests" />
+      <Button layoutX="796.0" layoutY="638.0" mnemonicParsing="false" onAction="#BackToHomepageOnAction" text="Back To Home page" />
+      <Button layoutX="26.0" layoutY="488.0" mnemonicParsing="false" onAction="#ViewSurveyLogsOnAction" prefHeight="25.0" prefWidth="177.0" text="View Survey Logs" />
+      <Button layoutX="26.0" layoutY="448.0" mnemonicParsing="false" onAction="#DisputeEvidenceOnAction" prefHeight="25.0" prefWidth="177.0" text="Dispute Evidence" />
+      <Button layoutX="26.0" layoutY="408.0" mnemonicParsing="false" onAction="#QuickMeasurementOnAction" prefHeight="25.0" prefWidth="177.0" text="Quick Measurement" />
       <BorderPane layoutX="224.0" layoutY="150.0" prefHeight="446.0" prefWidth="711.0" style="-fx-border-color: blue;">
          <center>
             <AnchorPane prefHeight="441.0" prefWidth="659.0" BorderPane.alignment="CENTER">
@@ -44,8 +44,8 @@
                   </Label>
                   <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " wrappingWidth="43.18212890625" />
                   <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="19.73675537109375" />
-                  <Label fx:id="UserNameLb" layoutX="57.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
-                  <Label fx:id="UserIDLb" layoutX="34.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
+                  <Label fx:id="UserNameLb" layoutX="62.0" layoutY="14.0" prefHeight="18.0" prefWidth="338.0" />
+                  <Label fx:id="UserIDLb" layoutX="63.0" layoutY="37.0" prefHeight="18.0" prefWidth="203.0" />
                </children>
             </AnchorPane>
          </center>
