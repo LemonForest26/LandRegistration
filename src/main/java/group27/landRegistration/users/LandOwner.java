@@ -50,4 +50,15 @@ public class LandOwner extends User {
                 .filter(p -> p.getOwnerID() == this.getUserID())
                 .collect(Collectors.toList());
     }
+    public void sendFeedback(String subject, String message) {
+        // Create the object
+        group27.landRegistration.nonUsers.Feedback fb =
+                new group27.landRegistration.nonUsers.Feedback(this.getUserID(), subject, message);
+
+        // Save to file
+        group27.landRegistration.utility.FileManager<group27.landRegistration.nonUsers.Feedback> fm =
+                new group27.landRegistration.utility.FileManager<>("Feedback.dat");
+
+        fm.appendItem(fb);
+    }
 }

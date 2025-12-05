@@ -27,8 +27,11 @@ abstract public class User implements Serializable {
                     idCounter = lastID;
                 }
             }
-        } catch (Exception ignored) {
-            // If failed → keep default 1000
+        } catch (Exception e) {
+            // FIX: Print the error so you know if the file is corrupted!
+            System.out.println("CRITICAL ERROR: Could not load users.dat");
+            e.printStackTrace();
+            // If you see 'InvalidClassException' in the console, it means you MUST delete users.dat
         }
     }
 

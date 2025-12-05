@@ -127,7 +127,7 @@ public class LandOwnerDashBoardViewController {
             CurrentPageLoader page = new CurrentPageLoader();
 
             page.loadWithData(
-                    "/group27/landRegistration/LandOwnerGoals/PayTaxView.fxml",
+                    "/group27/landRegistration/LandOwnerGoals/PayRegistrationFeeView.fxml",
                     actionEvent,
                     controller -> {
                         try {
