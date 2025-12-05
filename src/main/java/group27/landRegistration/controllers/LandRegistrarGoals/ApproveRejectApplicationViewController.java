@@ -5,12 +5,15 @@ import group27.landRegistration.nonUsers.Application;
 import group27.landRegistration.users.LandRegistrar;
 import group27.landRegistration.users.User;
 import group27.landRegistration.utility.CustomAlert;
+import group27.landRegistration.utility.FileManager; // Need this for lookup
 import group27.landRegistration.utility.CurrentPageLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import java.util.List;
 
 public class ApproveRejectApplicationViewController {
 
@@ -33,7 +36,8 @@ public class ApproveRejectApplicationViewController {
             PlotIDTF.setText(String.valueOf(app.getPlotID()));
             ApplicationIDTF.setText(String.valueOf(app.getApplicationID()));
 
-            // Make ID fields read-only so they don't accidentally change the wrong one
+            // Set Read-Only to encourage selecting from the list,
+            // but you can remove these lines if you prefer manual entry.
             PlotIDTF.setEditable(false);
             ApplicationIDTF.setEditable(false);
         }
@@ -43,39 +47,85 @@ public class ApproveRejectApplicationViewController {
         return loggedInRegistrar;
     }
 
+    // --- HELPER TO RECOVER APP FROM TEXT FIELDS ---
+    private boolean ensureApplicationLoaded() {
+        if (currentApplication != null) return true;
+
+        // Try to recover using the text fields
+        try {
+            String appIDText = ApplicationIDTF.getText().trim();
+            if (appIDText.isEmpty()) return false;
+
+            int appID = Integer.parseInt(appIDText);
+
+            // Search in file
+            FileManager<Application> fm = new FileManager<>("Application.dat");
+            List<Application> apps = fm.loadList();
+
+            for (Application app : apps) {
+                if (app.getApplicationID() == appID) {
+                    this.currentApplication = app; // Recovered!
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            // Ignore parsing errors, just return false
+        }
+        return false;
+    }
+
     @FXML
     public void ApproveOA(ActionEvent actionEvent) {
-        processDecision(actionEvent, "Approved");
-    }
-
-    @FXML
-    public void RejectOA(ActionEvent actionEvent) {
-        if (RemarksTF.getText().trim().isEmpty()) {
-            CustomAlert.show(Alert.AlertType.ERROR, "Input Required", "Reason Missing",
-                    "Please provide remarks/reason for rejection.");
-            return;
-        }
-        processDecision(actionEvent, "Rejected");
-    }
-
-    private void processDecision(ActionEvent event, String status) {
-        // Validation
-        if (currentApplication == null) {
+        // 1. Recover/Validate
+        if (!ensureApplicationLoaded()) {
             CustomAlert.show(Alert.AlertType.ERROR, "Error", "No Application Loaded",
-                    "Please go back and select an application properly.");
+                    "Could not find an application with the given ID. Please select one from the list.");
             return;
         }
 
         try {
+            // 2. Logic
             String remarks = RemarksTF.getText().trim();
+            // If remarks are empty for approval, add default text
+            if(remarks.isEmpty()) remarks = "Approved by Land Registrar";
 
-            // DELEGATION: Ask model to save everything
-            loggedInRegistrar.processApplication(currentApplication, status, remarks);
+            loggedInRegistrar.processApplication(currentApplication, "Approved", remarks);
 
-            CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Application " + status,
-                    "The application status has been updated.");
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Application Approved",
+                    "Status updated to Approved.");
 
-            BackOA(event);
+            BackOA(actionEvent);
+
+        } catch (Exception e) {
+            CustomAlert.show(Alert.AlertType.ERROR, "System Error", "Update Failed", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void RejectOA(ActionEvent actionEvent) {
+        // 1. Recover/Validate
+        if (!ensureApplicationLoaded()) {
+            CustomAlert.show(Alert.AlertType.ERROR, "Error", "No Application Loaded",
+                    "Could not find an application with the given ID.");
+            return;
+        }
+
+        String remarks = RemarksTF.getText().trim();
+        if (remarks.isEmpty()) {
+            CustomAlert.show(Alert.AlertType.ERROR, "Input Required", "Reason Missing",
+                    "Please provide remarks for rejection.");
+            return;
+        }
+
+        try {
+            // 2. Logic
+            loggedInRegistrar.processApplication(currentApplication, "Rejected", remarks);
+
+            CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Application Rejected",
+                    "Status updated to Rejected.");
+
+            BackOA(actionEvent);
 
         } catch (Exception e) {
             CustomAlert.show(Alert.AlertType.ERROR, "System Error", "Update Failed", e.getMessage());
@@ -85,11 +135,10 @@ public class ApproveRejectApplicationViewController {
 
     @FXML
     public void BackOA(ActionEvent actionEvent) {
-        // IMPORTANT: Ensure this path points to your actual FXML file location
         new CurrentPageLoader().loadWithData(
-                "/group27/landRegistration/LandRegistrarGoals/ReviewPendingApplicationView.fxml",
+                "/group27/landRegistration/AllDashboards/LandRegistrarDashBoardView.fxml",
                 actionEvent,
-                (ReviewPendingApplicationViewController controller) -> {
+                (LandRegistrarDashBoardViewController controller) -> {
                     controller.setUserData(loggedInRegistrar);
                 }
         );
