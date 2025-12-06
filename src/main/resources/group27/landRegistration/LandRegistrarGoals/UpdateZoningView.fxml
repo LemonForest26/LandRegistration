@@ -24,7 +24,7 @@
             <Button layoutX="328.0" layoutY="366.0" mnemonicParsing="false" onAction="#SaveZoningOA" prefHeight="26.0" prefWidth="302.0" text="Save Zoning" />
             <ComboBox fx:id="NewZoningCB" layoutX="328.0" layoutY="154.0" prefHeight="26.0" prefWidth="302.0" promptText="New Zoning" />
             <TextArea fx:id="FileUploadTA" layoutX="328.0" layoutY="213.0" prefHeight="122.0" prefWidth="302.0" />
-            <Text layoutX="328.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Upload:" />
+            <Text layoutX="328.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:" />
             <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackOA" prefHeight="26.0" prefWidth="96.0" text="Back" />
          </children>
       </AnchorPane>
