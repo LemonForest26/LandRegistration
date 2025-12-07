@@ -42,7 +42,8 @@ public class FinaliseTransferViewController {
             long newOwnerID = Long.parseLong(NewOwnerIDTF.getText());
 
             // 1. Perform the Logic (Delegate to Model)
-            landReg.finiliseTransfer(plotID, oldOwnerID, newOwnerID);
+            // FIX: Changed 'finiliseTransfer' to 'finalizeTransfer' to match LandRegistrar.java
+            landReg.finalizeTransfer(plotID, oldOwnerID, newOwnerID);
 
             // 2. Success Message
             CustomAlert.show(Alert.AlertType.INFORMATION, "Success", "Transfer Finalized",

@@ -18,11 +18,12 @@ public class LandRegistrar extends User {
 
     public void processApplication(Application app, String newStatus, String remarks) {
         // 1. Update the Application Object
+        // setStatus automatically updates the 'dateUpdated' field in the Application class
         app.setStatus(newStatus);
+
         if (remarks != null && !remarks.isEmpty()) {
             app.addNote("Registrar: " + remarks);
         }
-        app.setDateUpdated(LocalDate.now());
 
         // 2. Update Application.dat
         FileManager<Application> appFM = new FileManager<>("Application.dat");
@@ -36,25 +37,25 @@ public class LandRegistrar extends User {
         }
         appFM.saveList(apps);
 
-        // 3. Update Plot.dat (Sync changes & TRANSFER OWNERSHIP)
+        // 3. Update Plot.dat (Sync changes & TRANSFER OWNERSHIP if approved)
         FileManager<Plot> plotFM = new FileManager<>("Plot.dat");
         List<Plot> plots = plotFM.loadList();
 
-        // --- FIXED LOOP: Changed to indexed loop so 'i' works ---
         for (int i = 0; i < plots.size(); i++) {
             Plot p = plots.get(i);
 
             if (p.getPlotID() == app.getPlotID()) {
-                // Update the internal application list
+                // Update the internal application list inside the plot
                 p.updateApplication(app);
 
                 // If Approved, the Applicant becomes the new Owner of the Plot
                 if ("Approved".equalsIgnoreCase(newStatus)) {
+                    // Log the transfer before changing the ID to keep a record of the old owner
+                    p.addSurveyLog("Ownership transferred from ID " + p.getOwnerID() + " to ID " + app.getApplicantID() + " via Application Approval.");
                     p.setOwnerID(app.getApplicantID());
-                    p.addSurveyLog("Ownership transferred to ID " + app.getApplicantID() + " via Application Approval.");
                 }
 
-                plots.set(i, p); // Now 'i' is recognized
+                plots.set(i, p);
                 break;
             }
         }
@@ -90,6 +91,7 @@ public class LandRegistrar extends User {
 
     // --- GOAL: OFFICER PERFORMANCE (FLAGGING) ---
     public void flagOfficer(int officerID, String reason) {
+        // Requires the OfficerLog class (created below)
         OfficerLog log = new OfficerLog(officerID, "FLAGGED: " + reason, true);
         FileManager<OfficerLog> fm = new FileManager<>("OfficerLog.dat");
         fm.appendItem(log);
@@ -113,7 +115,7 @@ public class LandRegistrar extends User {
     }
 
     // --- GOAL: FINALISE TRANSFER ---
-    public void finiliseTransfer(int plotID, long oldOwnerID, long newOwnerID) {
+    public void finalizeTransfer(int plotID, long oldOwnerID, long newOwnerID) {
         FileManager<Plot> fm = new FileManager<>("Plot.dat");
         List<Plot> plots = fm.loadList();
         boolean found = false;

@@ -17,10 +17,18 @@ public class QuickMeasurementViewController {
 
     private Surveyor loggedInSurveyor;
 
-    // Cast User to Surveyor immediately for model access
+    /**
+     * Sets the user data for this controller.
+     * Validates that the user is a Surveyor instance.
+     * @param user The logged-in user passed from the previous screen.
+     */
     public void setUserData(User user) {
         if (user instanceof Surveyor) {
             this.loggedInSurveyor = (Surveyor) user;
+        } else {
+            // Handle cases where the user might not be a Surveyor (e.g. Admin view)
+            // or log a warning.
+            System.err.println("Error: User passed to QuickMeasurementViewController is not a Surveyor.");
         }
     }
 
@@ -30,7 +38,14 @@ public class QuickMeasurementViewController {
 
     @FXML
     public void SaveMeasurementOnAction(ActionEvent actionEvent) {
-        // 1. Validation
+        // 0. Pre-check: Ensure a surveyor is logged in
+        if (loggedInSurveyor == null) {
+            CustomAlert.show(Alert.AlertType.ERROR, "Authentication Error", "Invalid Session",
+                    "No valid surveyor account is logged in.");
+            return;
+        }
+
+        // 1. Validation: Check for empty fields
         if (plotiDTextfield.getText().isEmpty() || MeasurementtextField.getText().isEmpty()) {
             CustomAlert.show(Alert.AlertType.ERROR, "Input Error", "Missing Fields",
                     "Please enter both Plot ID and the measured area.");
@@ -41,13 +56,15 @@ public class QuickMeasurementViewController {
             int plotID = Integer.parseInt(plotiDTextfield.getText());
             double newArea = Double.parseDouble(MeasurementtextField.getText());
 
+            // Validate logic ranges
             if (newArea <= 0) {
                 CustomAlert.show(Alert.AlertType.ERROR, "Input Error", "Invalid Area",
-                        "Area must be greater than 0.");
+                        "Area must be a positive number greater than 0.");
                 return;
             }
 
             // 2. Delegate Logic to Model
+            // specific method on Surveyor class to handle logic/database
             boolean success = loggedInSurveyor.recordMeasurement(plotID, newArea);
 
             // 3. Feedback
@@ -57,19 +74,23 @@ public class QuickMeasurementViewController {
                 MeasurementtextField.clear();
                 plotiDTextfield.clear();
             } else {
-                CustomAlert.show(Alert.AlertType.ERROR, "Error", "Plot Not Found",
-                        "No plot found with ID: " + plotID);
+                CustomAlert.show(Alert.AlertType.ERROR, "Error", "Operation Failed",
+                        "Could not update measurement. Ensure Plot ID " + plotID + " exists and is assigned to you.");
             }
 
         } catch (NumberFormatException e) {
             CustomAlert.show(Alert.AlertType.ERROR, "Input Error", "Invalid Format",
-                    "Plot ID must be an integer and Area must be a number.");
+                    "Plot ID must be an integer (e.g., 101) and Area must be a number (e.g., 150.5).");
+        } catch (Exception e) {
+            CustomAlert.show(Alert.AlertType.ERROR, "System Error", "Unexpected Error",
+                    "An error occurred: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
     @FXML
     public void GoBackOnAction(ActionEvent actionEvent) {
-        // Clean navigation using Lambda
+        // Navigate back to the Dashboard using lambda for type-safe data passing
         new CurrentPageLoader().loadWithData(
                 "/group27/landRegistration/AllDashboards/SurveyorDashboardView.fxml",
                 actionEvent,
